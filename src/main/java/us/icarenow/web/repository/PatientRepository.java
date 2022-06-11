@@ -9,9 +9,9 @@ import us.icarenow.web.model.Patient;
 import java.util.List;
 
 @Repository
-public interface PatientRepository extends JpaRepository<Patient, Integer> {
+public interface PatientRepository extends JpaRepository<Patient, Long> {
 
-    @Query("show all patients")
+    @Query("select p from Patient p where p.id= :id")
     List findAll();
 
     @Query("select p from Patient p where p.id= :id")
