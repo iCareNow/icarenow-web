@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Long> {
 
-    @Query("select p from Patient p where p.id= :id")
+    @Query("select p from Patient p")
     List findAll();
 
     @Query("select p from Patient p where p.id= :id")

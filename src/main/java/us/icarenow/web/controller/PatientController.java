@@ -1,11 +1,8 @@
 package us.icarenow.web.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import us.icarenow.web.model.Patient;
-import us.icarenow.web.repository.PatientRepository;
 import us.icarenow.web.service.PatientService;
 
 import java.util.List;
