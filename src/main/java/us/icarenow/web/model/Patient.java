@@ -8,15 +8,16 @@ import javax.persistence.*;
 public class Patient {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
 
     @Column(name="CNP")
-    private int CNP;
+    private String CNP;
 
     @Column(name="name")
     private String name;
+
 
     @Column(name="insured")
     private boolean insured;
@@ -24,7 +25,7 @@ public class Patient {
     public Patient() {
     }
 
-    public Patient(int id, String name, boolean insured){
+    public Patient(String CNP, String name){
         this.id = id;
         this.CNP = CNP;
         this.name = name;
@@ -39,11 +40,11 @@ public class Patient {
         this.id = id;
     }
 
-    public int getCNP() {
+    public String getCNP() {
         return CNP;
     }
 
-    public void setCNP(int CNP) {
+    public void setCNP(String CNP) {
         this.CNP = CNP;
     }
 
