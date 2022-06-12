@@ -4,16 +4,18 @@ package us.icarenow.web.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="patient")
+//@Table(name="patients")
 public class Patient {
 
-    @Id
+
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id
     @Column(name="id")
     private int id;
 
-    @Column(name="CNP")
-    private String CNP;
+    @Column(name="cnp")
+    private String cnp;
 
     @Column(name="name")
     private String name;
@@ -25,11 +27,11 @@ public class Patient {
     public Patient() {
     }
 
-    public Patient(String CNP, String name){
-        this.id = id;
-        this.CNP = CNP;
+    public Patient(String cnp, String name){
+//        this.id = id;
+        this.cnp = cnp;
         this.name = name;
-        this.insured = insured;
+//        this.insured = insured;
     }
 
     public int getId() {
@@ -41,11 +43,11 @@ public class Patient {
     }
 
     public String getCNP() {
-        return CNP;
+        return cnp;
     }
 
     public void setCNP(String CNP) {
-        this.CNP = CNP;
+        this.cnp = CNP;
     }
 
     public String getName() {
