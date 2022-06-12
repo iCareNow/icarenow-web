@@ -51,11 +51,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .password(passwordEncoder().encode("Password"))
                 .roles("ADMIN")
                 .and()
-                .withUser("libenciuc.adrian@yahoo.com")
+                .withUser("gigi.adrian@yahoo.com")
                 .password(passwordEncoder().encode("Password"))
                 .roles("DOCTOR")
                 .and()
-                .withUser("libenciuc.adrian@yahoo.com")
+                .withUser("mimi.adrian@yahoo.com")
                 .password(passwordEncoder().encode("Password"))
                 .roles("PATIENT");
 //        auth.userDetailsService(userService)
