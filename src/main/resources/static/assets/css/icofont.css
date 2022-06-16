@@ -5653,7 +5653,7 @@
 .icofont-lock:before {
 	content: "\f052";
 }
-.icofont-sign-in:before {
+.icofont-login:before {
 	content: "\f053";
 }
 .icofont-logout:before {
@@ -6022,7 +6022,7 @@
 .icofont-shopping-cart:before {
 	content: "\f0cd";
 }
-.icofont-sign-in:before {
+.icofont-login:before {
 	content: "\f0ce";
 }
 .icofont-sign-out:before {
