@@ -3,8 +3,6 @@ package us.icarenow.web.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import us.icarenow.web.controller.form.SignUpPatientForm;
-import us.icarenow.web.model.entity.Patient;
-import us.icarenow.web.model.entity.Role;
 import us.icarenow.web.model.entity.User;
 
 import javax.transaction.Transactional;
