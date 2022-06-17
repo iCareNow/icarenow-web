@@ -1,6 +1,7 @@
 package us.icarenow.web.model.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="icn_user")
@@ -13,6 +14,9 @@ public class User {
     private String email;
 
     private String password;
+//    TODO @ManyToMany
+    // TODO d legat tabela de role
+    private List<Role> role;
 
     public User() {
     }

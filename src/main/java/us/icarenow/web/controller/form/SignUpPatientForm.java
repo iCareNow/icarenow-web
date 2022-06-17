@@ -7,22 +7,22 @@ import javax.validation.constraints.Pattern;
 
 public class SignUpPatientForm {
 
-//    @Pattern(regexp = "//d{13}", message = "CNP invalid")
+//    TODO @Pattern(regexp = "//d{13}", message = "CNP invalid")
     private String cnp;
 
-//    @Email(message = "Email invalid")
+//    TODO  @Email(message = "Email invalid")
     private String email;
 
-//    @Min(6)
-//    @Max(30)
+//    TODO @Min(6)
+//    TODO @Max(30)
     private String password;
 
-//    @Min(4)
-//    @Max(30)
+//    TODO @Min(4)
+//    TODO @Max(30)
     private String firstName;
 
-//    @Min(4)
-//    @Max(30)
+//    TODO @Min(4)
+//    TODO  @Max(30)
     private String lastName;
 
     public String getCnp() {
