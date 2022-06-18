@@ -16,11 +16,11 @@ public class User {
     private String password;
 //    TODO @ManyToMany
     // TODO d legat tabela de role
-    private List<Role> role;
+//   TODO private List<Role> role;
 
-    @ManyToMany
+//    TODO @ManyToMany
     // TODO de legat de tabela role
-    private List<Role> roles;
+//   TODO private List<Role> roles;
 
     public User() {
     }
@@ -54,11 +54,11 @@ public class User {
         this.password = password;
     }
 
-    public List<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
-    }
+//  TODO  public List<Role> getRoles() {
+//        return roles;
+//    }
+//
+//   TODO public void setRoles(List<Role> roles) {
+//        this.roles = roles;
+//    }
 }

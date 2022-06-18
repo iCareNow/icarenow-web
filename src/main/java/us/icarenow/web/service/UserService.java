@@ -18,7 +18,7 @@ public class UserService {
 
     public User createPatientUser(SignUpPatientForm patientForm) {
         User user = new User(patientForm.getEmail(), patientForm.getPassword());
-        user.setRoles(Arrays.asList(new Role(Roles.PATIENT.toString())));
+//    TODO    user.setRoles(Arrays.asList(new Role(Roles.PATIENT.toString())));
         // TODO  send email (optional)
         return userRepository.save(user);
     }
