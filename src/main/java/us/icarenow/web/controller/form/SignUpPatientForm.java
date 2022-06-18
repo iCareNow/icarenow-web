@@ -2,22 +2,22 @@ package us.icarenow.web.controller.form;
 
 public class SignUpPatientForm {
 
-//    TODO @Pattern(regexp = "//d{13}", message = "CNP invalid")
+    //    TODO @Pattern(regexp = "//d{13}", message = "CNP invalid")
     private String cnp;
 
-//    TODO @Email(message = "Email invalid")
+    //    TODO  @Email(message = "Email invalid")
     private String email;
 
-//    TODO @Min(6)
+    //    TODO @Min(6)
 //    TODO @Max(30)
     private String password;
 
-//    TODO @Min(4)
+    //    TODO @Min(4)
 //    TODO @Max(30)
     private String firstName;
 
-//    TODO @Min(4)
-//    TODO @Max(30)
+    //    TODO @Min(4)
+//    TODO  @Max(30)
     private String lastName;
 
     public String getCnp() {

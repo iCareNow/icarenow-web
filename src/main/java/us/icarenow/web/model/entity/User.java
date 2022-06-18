@@ -14,6 +14,9 @@ public class User {
     private String email;
 
     private String password;
+//    TODO @ManyToMany
+    // TODO d legat tabela de role
+    private List<Role> role;
 
     @ManyToMany
     // TODO de legat de tabela role
