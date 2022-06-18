@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
 <head>
     <meta charset="utf-8">
     <title>iCare - We really do care</title>
@@ -102,9 +102,9 @@
 
                 <div class="main-menu">
                     <nav class="main-menu-wrap">
-                        <ul class="menu-ul">
+                        <ul sec:authorize="isAuthenticated()" class="menu-ul">
                             <li class="menu-item">
-                                <span class="group-title">Pages</span>
+                                <span sec:authentication="principal.username" class="group-title">Pages</span>
                             </li>
                             <li class="menu-item">
                                 <a class="item-link" href="index.html">
@@ -143,26 +143,28 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a class="item-link" href="payments.html">
-                                    <!-- <span class="link-icon icofont-pay"></span> -->
-                                    <span class="link-text">      </span>
+                                <a class="item-link" th:href="@{/logout}">
+                                     <span class="link-icon icofont-logout"></span>
+                                    <span class="link-text">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul sec:authorize="isAnonymous()" class="menu-ul">
+                            <li class="menu-item">
+                                <a class="item-link" th:href="@{/login}">
+                                    <span class="link-icon icofont-login"></span>
+                                    <span class="link-text">Login</span>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a class="item-link" href="sign-in.html">
-                                    <span class="link-icon icofont-nurse"></span>
-                                    <span class="link-text">Sign in</span>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a class="item-link" href="sign-up.html">
+                                <a class="item-link" th:href="@{/signup}">
                                     <span class="link-icon icofont-nurse"></span>
                                     <span class="link-text">Sign up</span>
                                 </a>
                             </li>
-
-
                         </ul>
+
                     </nav>
                 </div>
 
