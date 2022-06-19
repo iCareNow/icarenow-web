@@ -102,9 +102,11 @@
 
                 <div class="main-menu">
                     <nav class="main-menu-wrap">
-                        <ul sec:authorize="isAuthenticated()" class="menu-ul">
+                        <ul  class="menu-ul">
+<!--                        <ul sec:authorize="isAuthenticated()" class="menu-ul">-->
                             <li class="menu-item">
-                                <span sec:authentication="principal.username" class="group-title">Pages</span>
+                                <span class="group-title">Pages</span>
+<!--                                <span sec:authentication="principal.username" class="group-title">Pages</span>-->
                             </li>
                             <li class="menu-item">
                                 <a class="item-link" href="index.html">

@@ -1,23 +1,26 @@
 package us.icarenow.web.controller.form;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class SignUpPatientForm {
 
-//    TODO @Pattern(regexp = "//d{13}", message = "CNP invalid")
+    @Pattern(regexp ="^[0-9]{13}", message = "CNP invalid")
     private String cnp;
 
 //    TODO @Email(message = "Email invalid")
+    @Email
+//    @Pattern(regexp ="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,6}$", message = "Email invalid")
     private String email;
 
-//    TODO @Min(6)
-//    TODO @Max(30)
+    @Size(min=6, max=25)
     private String password;
 
-//    TODO @Min(4)
-//    TODO @Max(30)
+    @Size(min=3, max=25)
     private String firstName;
 
-//    TODO @Min(4)
-//    TODO @Max(30)
+    @Size(min=3, max=25)
     private String lastName;
 
     public String getCnp() {

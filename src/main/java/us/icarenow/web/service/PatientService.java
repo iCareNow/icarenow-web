@@ -16,7 +16,8 @@ public class PatientService {
     @Autowired
     private RestTemplate restTemplate;
 
-    public void createPatient(SignUpPatientForm patientForm, int userId) {
+    public void createPatient(SignUpPatientForm patientForm, Long userId) {
+
         // TODO Call CNSAS - use RestTemplate
        //TODO InsurredPatient insurredPatient = restTemplate.getForObject("http://cnass/12732131232", InsurredPatient.class);
        //TODO patientRepository.save(new Patient(userId, patientForm.getCnp(), patientForm.getFirstName(), patientForm.getLastName(), insurredPatient.isInssured()));
