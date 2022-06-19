@@ -8,6 +8,8 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.List;
+
 
 @Entity
 @Table(name = "icn_user")
@@ -37,6 +39,12 @@ public class User implements UserDetails {
     public void setId(long id) {    this.id = id;
     }
 
+
+
+
+//    @ManyToMany
+//    // TODO de legat de tabela role
+//    private List<Role> roles;
 
 
     public User() {
@@ -98,6 +106,7 @@ public class User implements UserDetails {
         this.password = password;
     }
 
+
     public byte getStatus() {
         return status;
     }
@@ -105,6 +114,8 @@ public class User implements UserDetails {
     public void setStatus(byte status) {
         this.status = status;
     }
+
+
 
     public List<Role> getRoles() {
         return roles;
