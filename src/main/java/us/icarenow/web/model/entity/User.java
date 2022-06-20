@@ -1,13 +1,17 @@
 package us.icarenow.web.model.entity;
 
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.List;
+
+import static us.icarenow.web.model.entity.UserStatus.*;
+
 
 @Entity
 @Table(name = "icn_user")
@@ -30,12 +34,19 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "roleId", referencedColumnName = "id"))
     private List<Role> roles;
 
+    public User() {
+    }
+
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(long id) {    this.id = id;
     }
 
     public String getEmail() {
@@ -63,22 +74,22 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return status != 3;
+        return status != EXPIRED.value();
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return status != 4;
+        return status != LOCKED.value();
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return status != 3;
+        return status != EXPIRED.value();
     }
 
     @Override
     public boolean isEnabled() {
-        return status == 1;
+        return status == ACTIVE.value();
     }
 
     public void setPassword(String password) {
@@ -100,4 +111,5 @@ public class User implements UserDetails {
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
+
 }

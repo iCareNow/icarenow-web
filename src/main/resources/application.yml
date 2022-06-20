@@ -3,4 +3,4 @@ server:
   servlet:
     context-path: /
 
-#spring.main.allow-circular-references: true
+spring.main.allow-circular-references: true
