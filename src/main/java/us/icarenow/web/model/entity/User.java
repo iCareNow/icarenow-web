@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.List;
 
+import static us.icarenow.web.model.entity.UserStatus.*;
+
 
 @Entity
 @Table(name = "icn_user")
@@ -32,21 +34,6 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "roleId", referencedColumnName = "id"))
     private List<Role> roles;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {    this.id = id;
-    }
-
-
-
-
-//    @ManyToMany
-//    // TODO de legat de tabela role
-//    private List<Role> roles;
-
-
     public User() {
     }
 
@@ -55,6 +42,12 @@ public class User implements UserDetails {
         this.password = password;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {    this.id = id;
+    }
 
     public String getEmail() {
         return email;
@@ -63,7 +56,6 @@ public class User implements UserDetails {
     public void setEmail(String email) {
         this.email = email;
     }
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -76,36 +68,33 @@ public class User implements UserDetails {
     }
 
     @Override
-
     public String getPassword() {
         return password;
     }
 
-
     @Override
     public boolean isAccountNonExpired() {
-        return status != 3;
+        return status != EXPIRED.value();
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return status != 4;
+        return status != LOCKED.value();
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return status != 3;
+        return status != EXPIRED.value();
     }
 
     @Override
     public boolean isEnabled() {
-        return status == 1;
+        return status == ACTIVE.value();
     }
 
     public void setPassword(String password) {
         this.password = password;
     }
-
 
     public byte getStatus() {
         return status;
@@ -114,8 +103,6 @@ public class User implements UserDetails {
     public void setStatus(byte status) {
         this.status = status;
     }
-
-
 
     public List<Role> getRoles() {
         return roles;

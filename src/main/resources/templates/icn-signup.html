@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="utf-8">
     <title>iCare - We really do care</title>
@@ -89,7 +89,7 @@
                         </div>
                     </form>
 
-                    <p class="mt-5">Have an account? <a href="./sign-in.html">Sign in!</a></p>
+                    <p class="mt-5">Have an account? <a th:href="@{/login}">Sign in!</a></p>
                 </div>
             </div>
         </div>

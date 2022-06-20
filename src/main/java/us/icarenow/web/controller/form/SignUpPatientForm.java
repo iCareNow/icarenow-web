@@ -9,9 +9,7 @@ public class SignUpPatientForm {
     @Pattern(regexp ="^[0-9]{13}", message = "CNP invalid")
     private String cnp;
 
-//    TODO @Email(message = "Email invalid")
     @Email
-//    @Pattern(regexp ="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,6}$", message = "Email invalid")
     private String email;
 
     @Size(min=6, max=25)

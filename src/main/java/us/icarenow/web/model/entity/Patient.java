@@ -19,12 +19,12 @@ public class Patient {
 
     private String lastName;
 
-    private boolean insured;
+    private byte insured;
 
     public Patient() {
     }
 
-    public Patient(int userId, String cnp, String firstName, String lastName, boolean insured) {
+    public Patient(int userId, String cnp, String firstName, String lastName, byte insured) {
         this.userId = userId;
         this.cnp = cnp;
         this.firstName = firstName;
@@ -72,11 +72,11 @@ public class Patient {
         this.lastName = lastName;
     }
 
-    public boolean isInsured() {
+    public byte getInsured() {
         return insured;
     }
 
-    public void setInsured(boolean insured) {
+    public void setInsured(byte insured) {
         this.insured = insured;
     }
 }
