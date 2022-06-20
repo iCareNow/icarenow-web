@@ -49,22 +49,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("libenciuc.adrian@yahoo.com")
-                .password(passwordEncoder().encode("Password"))
-                .roles("ADMIN")
-                .and()
-                .withUser("gigi.adrian@yahoo.com")
-                .password(passwordEncoder().encode("Password"))
-                .roles("DOCTOR")
-                .and()
-                .withUser("radu@gmail.com")
-                .password(passwordEncoder().encode("Password"))
-                .roles("ADMIN")
-                .and()
-                .withUser("mimi.adrian@yahoo.com")
-                .password(passwordEncoder().encode("Password"))
-                .roles("PATIENT");
+//        auth.inMemoryAuthentication()
+//                .withUser("libenciuc.adrian@yahoo.com")
+//                .password(passwordEncoder().encode("Password"))
+//                .roles("ADMIN")
+//                .and()
+//                .withUser("gigi.adrian@yahoo.com")
+//                .password(passwordEncoder().encode("Password"))
+//                .roles("DOCTOR")
+//                .and()
+//                .withUser("mimi.adrian@yahoo.com")
+//                .password(passwordEncoder().encode("Password"))
+//                .roles("PATIENT");
         auth.userDetailsService(userService)
                 .passwordEncoder(passwordEncoder());
     }
