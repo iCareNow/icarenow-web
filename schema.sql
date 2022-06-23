@@ -5,7 +5,7 @@ USE iCareNow;
 DROP TABLE IF EXISTS icn_role
 CREATE TABLE icn_role(
 	id	integer	not null identity primary key,
-	icn_role_name varchar(20) not null,
+	role_name varchar(20) not null,
 	)
 
 DROP TABLE IF EXISTS icn_user;
