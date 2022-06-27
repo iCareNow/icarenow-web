@@ -5,19 +5,16 @@ import javax.validation.constraints.Size;
 
 public class AddDoctorForm {
 
-    @Size(min=3, max=25)
+    @Size(min = 3, max = 25)
     private String firstName;
 
-    @Size(min=3, max=25)
+    @Size(min = 3, max = 25)
     private String lastName;
-
-    @Size(min=3, max=25)
-    private String specialty;
 
     @Email
     private String email;
 
-    @Size(min=6, max=25)
+    @Size(min = 6, max = 25)
     private String password;
 
     public String getFirstName() {
@@ -31,10 +28,6 @@ public class AddDoctorForm {
     public String getLastName() {
         return lastName;
     }
-
-    public String getSpecialty() { return specialty; }
-
-    public void setSpecialty(String specialty) { this.specialty = specialty; }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
@@ -61,7 +54,6 @@ public class AddDoctorForm {
         return "AddDoctorForm{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", specialty='" + specialty + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
