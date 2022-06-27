@@ -4,7 +4,7 @@ package us.icarenow.web.model.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="icn_doctor")
+@Table(name = "icn_doctor")
 public class Doctor {
 
     @Id
@@ -17,19 +17,13 @@ public class Doctor {
 
     private String lastName;
 
-    private String specialty;
-
-
-
-
     public Doctor() {
     }
 
-    public Doctor(int userId, String firstName, String lastName, String specialty) {
+    public Doctor(int userId, String firstName, String lastName) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.specialty = specialty;
     }
 
     public int getId() {
@@ -64,7 +58,4 @@ public class Doctor {
         this.lastName = lastName;
     }
 
-    public String getSpecialty() { return specialty; }
-
-    public void setSpecialty(String specialty) { this.specialty = specialty; }
 }

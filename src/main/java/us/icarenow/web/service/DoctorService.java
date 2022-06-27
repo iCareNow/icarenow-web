@@ -14,8 +14,8 @@ public class DoctorService {
 
     public void addDoctor(AddDoctorForm doctorForm, Long userId) {
 
-        // TODO Call CNSAS - use RestTemplate
-       //TODO InsurredPatient insurredPatient = restTemplate.getForObject("http://cnass/12732131232", InsurredPatient.class);
-       //TODO patientRepository.save(new Patient(userId, patientForm.getCnp(), patientForm.getFirstName(), patientForm.getLastName(), insurredPatient.isInssured()));
+
+       // TODO take info from doctorForm and Create doctor in DB
+       //TODO doctorRepository.save(new doctor(userId, patientForm.getCnp(), patientForm.getFirstName(), patientForm.getLastName(), insurredPatient.isInssured()));
     }
 }

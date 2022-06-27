@@ -23,13 +23,13 @@ public class AdminController {
 
     @GetMapping("/doctors")
     public ModelAndView addDoctorView() {
-        return new ModelAndView("icn-add-doctor", "doctorForm", new AddDoctorForm());
+        return new ModelAndView("icn-doctor", "doctorForm", new AddDoctorForm());
     }
 
     @PostMapping("/doctors")
     public String addDoctorAction(@Valid @ModelAttribute("doctorForm") AddDoctorForm doctorForm, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
-            return "icn-add-doctor";
+            return "icn-doctor";
         }
 
         System.out.println(doctorForm.toString());
