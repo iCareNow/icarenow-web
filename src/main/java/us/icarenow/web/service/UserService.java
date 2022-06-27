@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import us.icarenow.web.controller.form.AdDoctorForm;
 import us.icarenow.web.controller.form.SignUpPatientForm;
 import us.icarenow.web.repository.UserRepository;
 import us.icarenow.web.model.entity.Role;
@@ -27,6 +28,9 @@ public class UserService implements UserDetailsService {
 
     @Autowired
     private PasswordEncoder pwdEncoder;
+    @Autowired
+    private PasswordEncoder pwdDoctorEncoder;
+
 
     public User createPatientUser(SignUpPatientForm patientForm) {
         User user = new User(patientForm.getEmail(), encodedPwd(patientForm));
@@ -35,9 +39,20 @@ public class UserService implements UserDetailsService {
         // TODO  send email (optional)
         return userRepository.save(user);
     }
+    public User createDoctorUser(AdDoctorForm doctorForm) {
+        User user = new User(doctorForm.getEmail(), encodedDoctorPwd(doctorForm));
+        user.setRoles(Arrays.asList(new Role(Roles.DOCTOR.toString())));
+        user.setStatus(ACTIVE.value());
+        // TODO  send email (optional)
+        return userRepository.save(user);
+    }
 
     private String encodedPwd(SignUpPatientForm patientForm) {
         return pwdEncoder.encode(patientForm.getPassword());
+    }
+
+    private String encodedDoctorPwd(AdDoctorForm doctorForm) {
+        return pwdDoctorEncoder.encode(doctorForm.getPassword());
     }
 
     @Override

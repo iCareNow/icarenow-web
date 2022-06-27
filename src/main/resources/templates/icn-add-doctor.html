@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <title>iCare - We really do care</title>
@@ -52,25 +52,31 @@
                     <h2 class="h4 mt-0 mb-1">Add Doctor</h2>
                     <p class="text-muted">Enter details</p>
 
-                    <form>
+                    <form th:action="@{/admin/add-doctor}" th:object="${doctorForm}" method="post" class="user">
+
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="First Name">
+                            <input type="text" th:field="*{firstName}" class="form-control form-control-user" placeholder="First Name">
+                            <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
                         </div>
 
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Last Name">
+                            <input type="text" th:field="*{lastName}" class="form-control form-control-user" placeholder="Last Name">
+                            <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
                         </div>
 
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Specialty">
+                            <input type="text" th:field="*{specialty}" class="form-control form-control-user" placeholder="Specialty">
+                            <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('specialty')}" th:errors="*{specialty}"></div>
                         </div>
 
                         <div class="form-group">
-                            <input class="form-control" type="email" placeholder="Email address">
+                            <input type="text" th:field="*{email}" class="form-control form-control-user" placeholder="Email">
+                            <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
                         </div>
 
                         <div class="form-group">
-                            <input class="form-control" type="password" placeholder="Password">
+                            <input type="password" th:field="*{password}" class="form-control form-control-user" placeholder="Password">
+                            <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
                         </div>
 
                         <div class="form-check form-switch mb-4">
