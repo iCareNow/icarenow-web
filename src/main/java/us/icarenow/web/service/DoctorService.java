@@ -2,11 +2,8 @@ package us.icarenow.web.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-import us.icarenow.web.controller.form.AdDoctorForm;
-import us.icarenow.web.controller.form.SignUpPatientForm;
+import us.icarenow.web.controller.form.AddDoctorForm;
 import us.icarenow.web.repository.DoctorRepository;
-import us.icarenow.web.repository.PatientRepository;
 
 @Service
 public class DoctorService {
@@ -15,7 +12,7 @@ public class DoctorService {
     private DoctorRepository doctorRepository;
 
 
-    public void addDoctor(AdDoctorForm doctorForm, Long userId) {
+    public void addDoctor(AddDoctorForm doctorForm, Long userId) {
 
         // TODO Call CNSAS - use RestTemplate
        //TODO InsurredPatient insurredPatient = restTemplate.getForObject("http://cnass/12732131232", InsurredPatient.class);

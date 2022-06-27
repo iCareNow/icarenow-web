@@ -3,7 +3,7 @@ package us.icarenow.web.controller.form;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
-public class AdDoctorForm {
+public class AddDoctorForm {
 
     @Size(min=3, max=25)
     private String firstName;

@@ -1,4 +1,4 @@
-package us.icarenow.web.model.form;
+package us.icarenow.web.controller.form;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
