@@ -8,7 +8,6 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.List;
 
 import static us.icarenow.web.model.entity.UserStatus.*;
 
@@ -25,9 +24,9 @@ public class User implements UserDetails {
 
     private String email;
 
-    private String password;
+    private String pwd;
 
-    private byte status;
+    private byte accountStatus;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(joinColumns = @JoinColumn(name = "userId", referencedColumnName = "id"),
@@ -37,9 +36,9 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String email, String password) {
+    public User(String email, String pwd) {
         this.email = email;
-        this.password = password;
+        this.pwd = pwd;
     }
 
     public long getId() {
@@ -69,39 +68,39 @@ public class User implements UserDetails {
 
     @Override
     public String getPassword() {
-        return password;
+        return pwd;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return status != EXPIRED.value();
+        return accountStatus != EXPIRED.value();
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return status != LOCKED.value();
+        return accountStatus != LOCKED.value();
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return status != EXPIRED.value();
+        return accountStatus != EXPIRED.value();
     }
 
     @Override
     public boolean isEnabled() {
-        return status == ACTIVE.value();
+        return accountStatus == ACTIVE.value();
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 
-    public byte getStatus() {
-        return status;
+    public byte getAccountStatus() {
+        return accountStatus;
     }
 
-    public void setStatus(byte status) {
-        this.status = status;
+    public void setAccountStatus(byte accountStatus) {
+        this.accountStatus = accountStatus;
     }
 
     public List<Role> getRoles() {
