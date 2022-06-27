@@ -2,7 +2,7 @@ package us.icarenow.web.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import us.icarenow.web.controller.form.AddDoctorForm;
+import us.icarenow.web.controller.form.DoctorForm;
 import us.icarenow.web.repository.DoctorRepository;
 
 @Service
@@ -12,7 +12,7 @@ public class DoctorService {
     private DoctorRepository doctorRepository;
 
 
-    public void addDoctor(AddDoctorForm doctorForm, Long userId) {
+    public void addDoctor(DoctorForm doctorForm, Long userId) {
 
 
        // TODO take info from doctorForm and Create doctor in DB

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <title>iCare - We really do care</title>
@@ -9,21 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../assets/img/favicon.ico">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="../assets/css/icofont.min.css">
-    <link rel="stylesheet" href="../assets/css/simple-line-icons.css">
-    <link rel="stylesheet" href="../assets/css/jquery.typeahead.css">
-    <link rel="stylesheet" href="../assets/css/datatables.min.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="../assets/css/Chart.min.css">
-    <link rel="stylesheet" href="../assets/css/morris.css">
-    <link rel="stylesheet" href="../assets/css/leaflet.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/icofont.min.css">
+    <link rel="stylesheet" href="/assets/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/assets/css/jquery.typeahead.css">
+    <link rel="stylesheet" href="/assets/css/datatables.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/assets/css/Chart.min.css">
+    <link rel="stylesheet" href="/assets/css/morris.css">
+    <link rel="stylesheet" href="/assets/css/leaflet.css">
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/icarenow.css">
 </head>
 
@@ -238,22 +238,35 @@
             </div>
 
             <div class="modal-body">
-                <form>
+
+                <form id="doctorForm" th:action="@{/admin/doctors}" th:object="${doctorForm}" method="post" class="user">
 
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="First name">
+                        <input type="text" th:field="*{firstName}" class="form-control form-control-user"
+                               placeholder="First Name">
+                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('firstName')}"
+                             th:errors="*{firstName}"></div>
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Last name">
+                        <input type="text" th:field="*{lastName}" class="form-control form-control-user"
+                               placeholder="Last Name">
+                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('lastName')}"
+                             th:errors="*{lastName}"></div>
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control" type="email" placeholder="Email">
+                        <input type="text" th:field="*{email}" class="form-control form-control-user"
+                               placeholder="Email">
+                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('email')}"
+                             th:errors="*{email}"></div>
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control" type="password" placeholder="Password">
+                        <input type="password" th:field="*{password}" class="form-control form-control-user"
+                               placeholder="Password">
+                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('password')}"
+                             th:errors="*{password}"></div>
                     </div>
 
                     <div class="row">
@@ -293,7 +306,7 @@
             <div class="modal-footer d-block">
                 <div class="actions justify-content-between">
                     <button type="button" class="btn btn-error" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-info">Add doctor</button>
+                    <button form="doctorForm" type="submit" class="btn btn-primary">Add doctor</button>
                 </div>
             </div>
         </div>
@@ -301,21 +314,21 @@
 </div>
 <!-- end Add doctor modals -->
 
-<script src="../assets/js/jquery-3.6.0.min.js"></script>
-<script src="../assets/js/jquery-migrate-1.4.1.min.js"></script>
-<script src="../assets/js/popper.min.js"></script>
-<script src="../assets/js/bootstrap.min.js"></script>
-<script src="../assets/js/jquery.typeahead.min.js"></script>
-<script src="../assets/js/datatables.min.js"></script>
-<script src="../assets/js/bootstrap-select.min.js"></script>
-<script src="../assets/js/jquery.barrating.min.js"></script>
-<script src="../assets/js/Chart.min.js"></script>
-<script src="../assets/js/raphael-min.js"></script>
-<script src="../assets/js/morris.min.js"></script>
-<script src="../assets/js/echarts.min.js"></script>
-<script src="../assets/js/echarts-gl.min.js"></script>
+<script src="/assets/js/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/jquery-migrate-1.4.1.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery.typeahead.min.js"></script>
+<script src="/assets/js/datatables.min.js"></script>
+<script src="/assets/js/bootstrap-select.min.js"></script>
+<script src="/assets/js/jquery.barrating.min.js"></script>
+<script src="/assets/js/Chart.min.js"></script>
+<script src="/assets/js/raphael-min.js"></script>
+<script src="/assets/js/morris.min.js"></script>
+<script src="/assets/js/echarts.min.js"></script>
+<script src="/assets/js/echarts-gl.min.js"></script>
 
-<script src="../assets/js/main.js"></script>
+<script src="/assets/js/main.js"></script>
 
 </body>
 </html>

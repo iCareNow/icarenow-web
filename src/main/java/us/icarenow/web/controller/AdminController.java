@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import us.icarenow.web.controller.form.AddDoctorForm;
+import us.icarenow.web.controller.form.DoctorForm;
 import us.icarenow.web.service.AdminService;
 
 import javax.validation.Valid;
@@ -23,11 +23,11 @@ public class AdminController {
 
     @GetMapping("/doctors")
     public ModelAndView addDoctorView() {
-        return new ModelAndView("icn-doctor", "doctorForm", new AddDoctorForm());
+        return new ModelAndView("icn-doctor", "doctorForm", new DoctorForm());
     }
 
     @PostMapping("/doctors")
-    public String addDoctorAction(@Valid @ModelAttribute("doctorForm") AddDoctorForm doctorForm, BindingResult result, ModelMap model) {
+    public String addDoctorAction(@Valid @ModelAttribute("doctorForm") DoctorForm doctorForm, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
             return "icn-doctor";
         }
