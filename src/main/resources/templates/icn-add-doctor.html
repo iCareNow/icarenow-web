@@ -9,21 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../assets/img/favicon.ico">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="../assets/css/icofont.min.css">
-    <link rel="stylesheet" href="../assets/css/simple-line-icons.css">
-    <link rel="stylesheet" href="../assets/css/jquery.typeahead.css">
-    <link rel="stylesheet" href="../assets/css/datatables.min.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="../assets/css/Chart.min.css">
-    <link rel="stylesheet" href="../assets/css/morris.css">
-    <link rel="stylesheet" href="../assets/css/leaflet.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/icofont.min.css">
+    <link rel="stylesheet" href="/assets/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/assets/css/jquery.typeahead.css">
+    <link rel="stylesheet" href="/assets/css/datatables.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/assets/css/Chart.min.css">
+    <link rel="stylesheet" href="/assets/css/morris.css">
+    <link rel="stylesheet" href="/assets/css/leaflet.css">
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/icarenow.css">
 </head>
 
 
@@ -42,7 +43,7 @@
             <div class="content-header">
                 <div class="app-logo">
                     <div class="logo-wrap">
-                        <img src="../assets/img/logo.png" alt="" width="147" height="33" class="logo-img">
+                        <img src="/assets/img/logo.png" alt="" width="147" height="33" class="logo-img">
                     </div>
                 </div>
             </div>
@@ -52,7 +53,7 @@
                     <h2 class="h4 mt-0 mb-1">Add Doctor</h2>
                     <p class="text-muted">Enter details</p>
 
-                    <form th:action="@{/admin/add-doctor}" th:object="${doctorForm}" method="post" class="user">
+                    <form th:action="@{/admin/doctors}" th:object="${doctorForm}" method="post" class="user">
 
                         <div class="form-group">
                             <input type="text" th:field="*{firstName}" class="form-control form-control-user" placeholder="First Name">
@@ -98,21 +99,21 @@
     </div>
 </div>
 
-<script src="../assets/js/jquery-3.6.0.min.js"></script>
-<script src="../assets/js/jquery-migrate-1.4.1.min.js"></script>
-<script src="../assets/js/popper.min.js"></script>
-<script src="../assets/js/bootstrap.min.js"></script>
-<script src="../assets/js/jquery.typeahead.min.js"></script>
-<script src="../assets/js/datatables.min.js"></script>
-<script src="../assets/js/bootstrap-select.min.js"></script>
-<script src="../assets/js/jquery.barrating.min.js"></script>
-<script src="../assets/js/Chart.min.js"></script>
-<script src="../assets/js/raphael-min.js"></script>
-<script src="../assets/js/morris.min.js"></script>
-<script src="../assets/js/echarts.min.js"></script>
-<script src="../assets/js/echarts-gl.min.js"></script>
+<script src="/assets/js/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/jquery-migrate-1.4.1.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery.typeahead.min.js"></script>
+<script src="/assets/js/datatables.min.js"></script>
+<script src="/assets/js/bootstrap-select.min.js"></script>
+<script src="/assets/js/jquery.barrating.min.js"></script>
+<script src="/assets/js/Chart.min.js"></script>
+<script src="/assets/js/raphael-min.js"></script>
+<script src="/assets/js/morris.min.js"></script>
+<script src="/assets/js/echarts.min.js"></script>
+<script src="/assets/js/echarts-gl.min.js"></script>
 
-<script src="../assets/js/main.js"></script>
+<script src="/assets/js/main.js"></script>
 
 
 </body>

@@ -9,34 +9,31 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import us.icarenow.web.controller.form.AdDoctorForm;
-import us.icarenow.web.controller.form.SignUpPatientForm;
-import us.icarenow.web.model.entity.Doctor;
-import us.icarenow.web.service.AddDoctorService;
-import us.icarenow.web.service.SignUpService;
+import us.icarenow.web.controller.form.AddDoctorForm;
+import us.icarenow.web.service.AdminService;
 
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/admin/add-doctor")
-public class AddDoctorController {
+@RequestMapping("/admin")
+public class AdminController {
 
     @Autowired
-    private AddDoctorService addDoctorService;
+    private AdminService adminService;
 
-    @GetMapping
+    @GetMapping("/doctors")
     public ModelAndView addDoctorView() {
-        return new ModelAndView("icn-add-doctor", "doctorForm", new AdDoctorForm());
+        return new ModelAndView("icn-add-doctor", "doctorForm", new AddDoctorForm());
     }
 
-    @PostMapping
-    public String addDoctorAction(@Valid @ModelAttribute("doctorForm") AdDoctorForm doctorForm, BindingResult result, ModelMap model) {
+    @PostMapping("/doctors")
+    public String addDoctorAction(@Valid @ModelAttribute("doctorForm") AddDoctorForm doctorForm, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
             return "icn-add-doctor";
         }
 
         System.out.println(doctorForm.toString());
-        addDoctorService.addDoctor(doctorForm);
+        adminService.addDoctor(doctorForm);
 
         return "icn-signup-confirmation";
     }
