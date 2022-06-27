@@ -42,14 +42,7 @@ public class UserService implements UserDetailsService {
     public User createDoctorUser(DoctorForm doctorForm) {
         User user = new User(doctorForm.getEmail(), encodedDoctorPwd(doctorForm));
         user.setRoles(Arrays.asList(new Role(Roles.DOCTOR.toString())));
-        user.setStatus(ACTIVE.value());
-        // TODO  send email (optional)
-        return userRepository.save(user);
-    }
-    public User createDoctorUser(DoctorForm doctorForm) {
-        User user = new User(doctorForm.getEmail(), encodedDoctorPwd(doctorForm));
-        user.setRoles(Arrays.asList(new Role(Roles.DOCTOR.toString())));
-        user.setStatus(ACTIVE.value());
+        user.setAccountStatus(ACTIVE.value());
         // TODO  send email (optional)
         return userRepository.save(user);
     }
