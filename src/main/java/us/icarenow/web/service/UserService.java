@@ -31,7 +31,7 @@ public class UserService implements UserDetailsService {
     public User createPatientUser(SignUpPatientForm patientForm) {
         User user = new User(patientForm.getEmail(), encodedPwd(patientForm));
         user.setRoles(Arrays.asList(new Role(Roles.PATIENT.toString())));
-        user.setStatus(ACTIVE.value());
+        user.setAccountStatus(ACTIVE.value());
         // TODO  send email (optional)
         return userRepository.save(user);
     }

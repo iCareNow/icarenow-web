@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import us.icarenow.web.controller.form.SignUpPatientForm;
+import us.icarenow.web.model.entity.Specialty;
+import us.icarenow.web.repository.SpecialtyRepository;
 import us.icarenow.web.service.SignUpService;
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/signup")
