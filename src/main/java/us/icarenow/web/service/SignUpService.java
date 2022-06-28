@@ -20,5 +20,6 @@ public class SignUpService {
     public void signUp(SignUpPatientForm patientForm) {
         User user = userService.createPatientUser(patientForm);
         patientService.createPatient(patientForm, user.getId());
+        patientService.sendEmail();
     }
 }
