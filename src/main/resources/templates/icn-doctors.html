@@ -249,91 +249,91 @@
     </div>
 </div>
 
-<!-- Add doctor modals -->
-<div class="modal fade" id="add-doctor" tabindex="-1" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Add doctor</h5>
-            </div>
+<!--&lt;!&ndash; Add doctor modals &ndash;&gt;-->
+<!--<div class="modal fade" id="add-doctor" tabindex="-1" aria-hidden="true" style="display: none;">-->
+<!--    <div class="modal-dialog modal-dialog-centered">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <h5 class="modal-title">Add doctor</h5>-->
+<!--            </div>-->
 
-            <div class="modal-body">
+<!--            <div class="modal-body">-->
 
-                <form id="doctorForm" th:action="@{/admin/doctors}" th:object="${doctorForm}" method="post"
-                      class="user">
+<!--                <form id="doctorForm" th:action="@{/admin/doctors}" th:object="${doctorForm}" method="post"-->
+<!--                      class="user">-->
 
-                    <div class="form-group">
-                        <input type="text" th:field="*{firstName}" class="form-control form-control-user"
-                               placeholder="First Name">
-                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('firstName')}"
-                             th:errors="*{firstName}"></div>
-                    </div>
+<!--                    <div class="form-group">-->
+<!--                        <input type="text" th:field="*{firstName}" class="form-control form-control-user"-->
+<!--                               placeholder="First Name">-->
+<!--                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('firstName')}"-->
+<!--                             th:errors="*{firstName}"></div>-->
+<!--                    </div>-->
 
-                    <div class="form-group">
-                        <input type="text" th:field="*{lastName}" class="form-control form-control-user"
-                               placeholder="Last Name">
-                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('lastName')}"
-                             th:errors="*{lastName}"></div>
-                    </div>
+<!--                    <div class="form-group">-->
+<!--                        <input type="text" th:field="*{lastName}" class="form-control form-control-user"-->
+<!--                               placeholder="Last Name">-->
+<!--                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('lastName')}"-->
+<!--                             th:errors="*{lastName}"></div>-->
+<!--                    </div>-->
 
-                    <div class="form-group">
-                        <input type="text" th:field="*{email}" class="form-control form-control-user"
-                               placeholder="Email">
-                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('email')}"
-                             th:errors="*{email}"></div>
-                    </div>
+<!--                    <div class="form-group">-->
+<!--                        <input type="text" th:field="*{email}" class="form-control form-control-user"-->
+<!--                               placeholder="Email">-->
+<!--                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('email')}"-->
+<!--                             th:errors="*{email}"></div>-->
+<!--                    </div>-->
 
-                    <div class="form-group">
-                        <input type="password" th:field="*{password}" class="form-control form-control-user"
-                               placeholder="Password">
-                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('password')}"
-                             th:errors="*{password}"></div>
-                    </div>
+<!--                    <div class="form-group">-->
+<!--                        <input type="password" th:field="*{password}" class="form-control form-control-user"-->
+<!--                               placeholder="Password">-->
+<!--                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('password')}"-->
+<!--                             th:errors="*{password}"></div>-->
+<!--                    </div>-->
 
-                    <div class="row">
+<!--                    <div class="row">-->
 
-                        <div class="col-12 col-sm-6">
-                            <div class="form-group">
-                                <div class="dropdown bootstrap-select"><select class="selectpicker"
-                                                                               title="Specialty">
+<!--                        <div class="col-12 col-sm-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <div class="dropdown bootstrap-select"><select class="selectpicker"-->
+<!--                                                                               title="Specialty">-->
 
-                                    <option class="d-none">Specialty</option>
-                                    <option>Cardiology</option>
-                                    <option>Dentistry</option>
-                                    <option>Laboratory</option>
-                                    <option>Pulmonology</option>
-                                    <option>Cardiology</option>
-                                    <option>Gynecology</option>
-                                    <option>Gastrology</option>
-                                    <option>Neurology</option>
-                                    <option>Physical rehabilitation</option>
-                                    <option>Pediatrician</option>
+<!--                                    <option class="d-none">Specialty</option>-->
+<!--                                    <option>Cardiology</option>-->
+<!--                                    <option>Dentistry</option>-->
+<!--                                    <option>Laboratory</option>-->
+<!--                                    <option>Pulmonology</option>-->
+<!--                                    <option>Cardiology</option>-->
+<!--                                    <option>Gynecology</option>-->
+<!--                                    <option>Gastrology</option>-->
+<!--                                    <option>Neurology</option>-->
+<!--                                    <option>Physical rehabilitation</option>-->
+<!--                                    <option>Pediatrician</option>-->
 
-                                </select>
+<!--                                </select>-->
 
-                                    <div class="dropdown-menu ">
-                                        <div class="inner show" role="listbox" id="bs-select-3"
-                                             tabindex="-1">
-                                            <ul class="dropdown-menu inner show" role="presentation"></ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!--                                    <div class="dropdown-menu ">-->
+<!--                                        <div class="inner show" role="listbox" id="bs-select-3"-->
+<!--                                             tabindex="-1">-->
+<!--                                            <ul class="dropdown-menu inner show" role="presentation"></ul>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                </form>
-            </div>
-            <div class="modal-footer d-block">
-                <div class="actions justify-content-between">
-                    <button type="button" class="btn btn-error" data-bs-dismiss="modal">Cancel</button>
-                    <button form="doctorForm" type="submit" class="btn btn-primary">Add doctor</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end Add doctor modals -->
+<!--                </form>-->
+<!--            </div>-->
+<!--            <div class="modal-footer d-block">-->
+<!--                <div class="actions justify-content-between">-->
+<!--                    <button type="button" class="btn btn-error" data-bs-dismiss="modal">Cancel</button>-->
+<!--                    <button form="doctorForm" type="submit" class="btn btn-primary">Add doctor</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--&lt;!&ndash; end Add doctor modals &ndash;&gt;-->
 
 <script src="/assets/js/jquery-3.6.0.min.js"></script>
 <script src="/assets/js/jquery-migrate-1.4.1.min.js"></script>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import us.icarenow.web.controller.form.DoctorForm;
 import us.icarenow.web.service.AdminService;
+import us.icarenow.web.service.DoctorService;
 
 import javax.validation.Valid;
 
@@ -20,6 +21,9 @@ public class AdminController {
 
     @Autowired
     private AdminService adminService;
+
+    @Autowired
+    private DoctorService doctorService;
 
     @GetMapping("/dashboard")
 
@@ -42,5 +46,11 @@ public class AdminController {
         adminService.addDoctor(doctorForm);
 
         return "admin-doctors";
+    }
+    @GetMapping("/listdoctors")
+    public ModelAndView doctorList() {
+        ModelAndView doctorListMV = new ModelAndView("icn-doctors");
+        doctorListMV.addObject("doctorList", doctorService.getAllUsers());
+        return doctorListMV;
     }
 }
