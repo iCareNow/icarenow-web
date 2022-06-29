@@ -20,12 +20,6 @@ public class Doctor {
     public Doctor() {
     }
 
-//    public Doctor(int userId, String firstName, String lastName, S) {
-//        this.userId = userId;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//    }
-
     public Doctor(long userId, String firstName, String lastName) {
         this.userId = userId;
         this.firstName = firstName;
