@@ -11,7 +11,7 @@ public class Doctor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int userId;
+    private long userId;
 
     private String firstName;
 
@@ -20,7 +20,13 @@ public class Doctor {
     public Doctor() {
     }
 
-    public Doctor(int userId, String firstName, String lastName) {
+//    public Doctor(int userId, String firstName, String lastName, S) {
+//        this.userId = userId;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//    }
+
+    public Doctor(long userId, String firstName, String lastName) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -34,7 +40,7 @@ public class Doctor {
         this.id = id;
     }
 
-    public int getUserId() {
+    public long getUserId() {
         return userId;
     }
 

@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import us.icarenow.web.model.entity.Doctor;
 
 @Repository
-public interface DoctorRepository extends JpaRepository<Doctor, Integer> {
+public interface DoctorRepository extends JpaRepository<Doctor, Long> {
 
 }
