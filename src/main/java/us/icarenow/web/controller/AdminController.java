@@ -21,20 +21,26 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    @GetMapping("/dashboard")
+
+    public String dashboard() {
+        return "icn-admin";
+    }
+
     @GetMapping("/doctors")
     public ModelAndView addDoctorView() {
-        return new ModelAndView("icn-doctor", "doctorForm", new DoctorForm());
+        return new ModelAndView("admin-doctors", "doctorForm", new DoctorForm());
     }
 
     @PostMapping("/doctors")
     public String addDoctorAction(@Valid @ModelAttribute("doctorForm") DoctorForm doctorForm, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
-            return "icn-doctor";
+            return "admin-doctors";
         }
 
         System.out.println(doctorForm.toString());
         adminService.addDoctor(doctorForm);
 
-        return "icn-signup-confirmation";
+        return "admin-doctors";
     }
 }
