@@ -17,6 +17,8 @@ public class DoctorForm {
     @Size(min = 6, max = 25)
     private String password;
 
+    private String specialty;
+
     public String getFirstName() {
         return firstName;
     }
@@ -47,6 +49,14 @@ public class DoctorForm {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getSpecialty() {
+        return specialty;
+    }
+
+    public void setSpecialty(String specialty) {
+        this.specialty = specialty;
     }
 
     @Override

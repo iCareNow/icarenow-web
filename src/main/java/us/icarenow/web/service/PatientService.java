@@ -19,13 +19,11 @@ public class PatientService {
     @Autowired
     private InsuredPatient isInsuredPatient;
 
-
     public void createPatient(SignUpPatientForm patientForm, Long userId) {
 
+        String insuredPatient = restTemplate.getForObject("http://localhost:8081/insurances/" + patientForm.getCnp(), String.class);
 
-        String insuredPatient = restTemplate.getForObject("http://localhost:8081/insurances/"+patientForm.getCnp(), String.class);
-
-       byte insured = isInsuredPatient.insuredResponse(insuredPatient.toString());
-       patientRepository.save(new Patient(userId, patientForm.getCnp(), patientForm.getFirstName(), patientForm.getLastName(), insured));
+        byte insured = isInsuredPatient.insuredResponse(insuredPatient.toString());
+        patientRepository.save(new Patient(userId, patientForm.getCnp(), patientForm.getFirstName(), patientForm.getLastName(), insured));
     }
 }

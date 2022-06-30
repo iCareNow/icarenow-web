@@ -59,7 +59,7 @@
                             <li class="menu-item">
                                 <span class="group-title">Your space</span>
                             </li>
-                            <li  sec:authorize="hasAnyRole('ROLE_ADMIN')" class="menu-item">
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN')" class="menu-item">
                                 <a class="item-link" th:href="@{/admin/dashboard}">
                                     <span class="link-icon icofont-thermometer-alt"></span>
                                     <span class="link-text">Dashboard</span>
@@ -162,52 +162,25 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        <tr th:each="doctor: ${doctorList}">
-                                            <td th:text="${doctor.firstName}">First Name</td>
-                                            <td th:text="${doctor.lastName}">Last Name</td>
-<!--                                            <td th:text="${doctor.email}">Email</td>-->
-                                            <td th:text="${doctor.getSpecialty}">Specialty</td>
-                                            <td>
-                                                <div class="actions">
-                                                    <button class="btn btn-info btn-sm btn-square rounded-pill">
-                                                        <span class="btn-icon icofont-ui-edit"></span>
-                                                    </button>
-                                                    <button class="btn btn-error btn-sm btn-square rounded-pill">
-                                                        <span class="btn-icon icofont-ui-delete"></span>
-                                                    </button>
-                                                </div>
-                                            </td>
+                                    <tr th:each="doctor: ${doctorList}">
+                                        <td th:text="${doctor.firstName}">First Name</td>
+                                        <td th:text="${doctor.lastName}">Last Name</td>
+                                        <td th:text="${doctor.email}">Email</td>
+                                        <td th:text="${doctor.mergedSpecialties}">Specialty</td>
+                                        <td>
+                                            <div class="actions">
+                                                <button class="btn btn-info btn-sm btn-square rounded-pill">
+                                                    <span class="btn-icon icofont-ui-edit"></span>
+                                                </button>
+                                                <button class="btn btn-error btn-sm btn-square rounded-pill">
+                                                    <span class="btn-icon icofont-ui-delete"></span>
+                                                </button>
+                                            </div>
+                                        </td>
 
 
                                     </tbody>
-<!--                                    <tbody>-->
-<!--                                    <tr>-->
-<!--                                        <td>-->
-<!--                                            Liam-->
-<!--                                        </td>-->
-<!--                                        <td>-->
-<!--                                            Benjamin-->
-<!--                                        </td>-->
-<!--                                        <td>-->
-<!--                                            <div class="d-flex align-items-center nowrap text-primary">-->
-<!--                                                <span class="icofont-ui-email p-0 me-2"></span>-->
-<!--                                                liam@gmail.com-->
-<!--                                            </div>-->
-<!--                                        </td>-->
-<!--                                        <td>Oftalmologist</td>-->
-<!--                                        <td>-->
-<!--                                            <div class="actions">-->
-<!--                                                <button class="btn btn-info btn-sm btn-square rounded-pill">-->
-<!--                                                    <span class="btn-icon icofont-ui-edit"></span>-->
-<!--                                                </button>-->
-<!--                                                <button class="btn btn-error btn-sm btn-square rounded-pill">-->
-<!--                                                    <span class="btn-icon icofont-ui-delete"></span>-->
-<!--                                                </button>-->
-<!--                                            </div>-->
-<!--                                        </td>-->
-<!--                                    </tr>-->
 
-<!--                                    </tbody>-->
                                 </table>
                             </div>
 
@@ -275,18 +248,20 @@
 
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
-                                <div class="dropdown bootstrap-select"><select class="selectpicker"
+                                <div class="dropdown bootstrap-select"><select th:field="*{specialty}"
+                                                                               class="selectpicker"
                                                                                title="Specialty">
 
-                                    <option class="d-none">Specialty</option>
-                                    <option>Cardiology</option>
-                                    <option>Dentistry</option>
-                                    <option>Laboratory</option>
-                                    <option>Pulmonology</option>
-                                    <option>Gynecology</option>
-                                    <option>Gastrology</option>
-                                    <option>Neurology</option>
-                                    <option>Physical rehabilitation</option>
+                                    <!--                                    <option class="d-none">Specialty</option>-->
+                                    <option th:value="'Cardiology'" th:text="Cardiology"></option>
+                                    <option th:value="'Dentistry'" th:text="Dentistry"></option>
+                                    <option th:value="'Laboratory'" th:text="Laboratory"></option>
+                                    <option th:value="'Pulmonology'" th:text="Pulmonology"></option>
+                                    <option th:value="'Gynecology'" th:text="Gynecology"></option>
+                                    <option th:value="'Gastrology'" th:text="Gastrology"></option>
+                                    <option th:value="'Neurology'" th:text="Neurology"></option>
+                                    <option th:value="'Physical-rehabilitation'"
+                                            th:text="Physical-rehabilitation"></option>
 
                                 </select>
 

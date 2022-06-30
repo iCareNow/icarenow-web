@@ -127,9 +127,9 @@
                                 </a>
                             </li>
                             <li sec:authorize="hasAnyRole('ROLE_PATIENT')"class="menu-item">
-                                <a class="item-link" href="appointments-patient.html">
+                                <a class="item-link" th:href="@{/doctors}">
                                     <span class="link-icon icofont-stethoscope-alt"></span>
-                                    <span class="link-text">Appointments</span>
+                                    <span class="link-text">Doctors</span>
                                 </a>
                             </li>
                             <li sec:authorize="hasAnyRole('ROLE_ADMIN')" class="menu-item">
