@@ -10,7 +10,7 @@ INSERT INTO icn_user_roles VALUES (1, 1), (2, 1), (3, 3), (4, 3), (5, 3);
 INSERT INTO icn_patient(user_id, cnp, first_name, last_name, insured) VALUES (3, '1234567890123', 'Libenciuc', 'Adrian',1);
 INSERT INTO icn_patient(user_id, cnp, first_name, last_name, insured) VALUES (4, '2345678901123', 'Florentina', 'Mirisan',1);
 INSERT INTO icn_patient(user_id, cnp, first_name, last_name, insured) VALUES (5, '3456789012123', 'Alina', 'Sastras', 0);
-INSERT INTO icn_doctor(user_id, first_name, last_name) VALUES (2, 'Radu', 'Baciu');
+INSERT INTO icn_doctor(user_id, first_name, last_name) VALUES (2,'Radu', 'Baciu');
 --INSERT INTO icn_specialty(name) VALUES ('Allergy and immunology');
 --INSERT INTO icn_specialty(name) VALUES ('Anesthesiology');
 --INSERT INTO icn_specialty(name) VALUES ('Dermatology');

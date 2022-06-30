@@ -52,10 +52,11 @@ public class AdminController {
         ModelAndView doctorListMV = new ModelAndView("icn-doctors", "doctorForm", new DoctorForm());
         doctorListMV.addObject("doctorList", doctorService.getAllUsers());
         return doctorListMV;
+
     }
-    public ModelAndView userList() {
-        ModelAndView userListMV = new ModelAndView("icn-doctors");
-        userListMV.addObject("doctorList", doctorService.getAllUsers());
-        return userListMV;
-    }
+//    public ModelAndView userList() {
+//        ModelAndView userListMV = new ModelAndView("icn-doctors");
+//        userListMV.addObject("doctorList", doctorService.getAllUsers());
+//        return userListMV;
+//    }
 }

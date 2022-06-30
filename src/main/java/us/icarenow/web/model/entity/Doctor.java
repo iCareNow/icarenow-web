@@ -18,10 +18,12 @@ public class Doctor {
 
     private String lastName;
 
-//    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    @JoinTable(joinColumns = @JoinColumn(name = "doctorId", referencedColumnName = "id"),
-//            inverseJoinColumns = @JoinColumn(name = "specialtyId", referencedColumnName = "id"))
-//    private List<Specialty> specialties;
+//    private String mergedSpecialties;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(joinColumns = @JoinColumn(name = "doctorId", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "specialtyId", referencedColumnName = "id"))
+    private List<Specialty> specialty;
 
     public Doctor() {
     }
@@ -30,6 +32,7 @@ public class Doctor {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
+//        this.specialty=getSpecialty();
     }
 
     public int getId() {
@@ -64,11 +67,18 @@ public class Doctor {
         this.lastName = lastName;
     }
 
-//    public List<Specialty> getSpecialties() {
-//        return specialties;
-//    }
-//
-//    public void setSpecialties(List<Specialty> specialties) {
-//        this.specialties = specialties;
-//    }
-}
+    public List<Specialty> getSpecialty() {
+        return specialty;
+    }
+
+    public void setSpecialty(List<Specialty> specialty) {
+        this.specialty = specialty;
+    }
+    @Override
+    public String toString() {
+        return "Doctor{" +
+                "specialty=" + specialty +
+                '}';
+    }
+
+   }
