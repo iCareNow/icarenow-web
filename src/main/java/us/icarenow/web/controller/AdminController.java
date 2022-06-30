@@ -31,26 +31,31 @@ public class AdminController {
         return "icn-admin";
     }
 
-    @GetMapping("/doctors")
-    public ModelAndView addDoctorView() {
-        return new ModelAndView("admin-doctors", "doctorForm", new DoctorForm());
-    }
+//    @GetMapping("/doctors")
+//    public ModelAndView addDoctorView() {
+//        return new ModelAndView("admin-doctors", "doctorForm", new DoctorForm());
+//    }
 
     @PostMapping("/doctors")
     public String addDoctorAction(@Valid @ModelAttribute("doctorForm") DoctorForm doctorForm, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
-            return "admin-doctors";
+            return "icn-doctors";
         }
 
         System.out.println(doctorForm.toString());
         adminService.addDoctor(doctorForm);
 
-        return "admin-doctors";
+        return "icn-doctors";
     }
-    @GetMapping("/listdoctors")
-    public ModelAndView doctorList() {
-        ModelAndView doctorListMV = new ModelAndView("icn-doctors");
+    @GetMapping("/doctors")
+    public ModelAndView addDoctorView() {
+        ModelAndView doctorListMV = new ModelAndView("icn-doctors", "doctorForm", new DoctorForm());
         doctorListMV.addObject("doctorList", doctorService.getAllUsers());
         return doctorListMV;
+    }
+    public ModelAndView userList() {
+        ModelAndView userListMV = new ModelAndView("icn-doctors");
+        userListMV.addObject("doctorList", doctorService.getAllUsers());
+        return userListMV;
     }
 }

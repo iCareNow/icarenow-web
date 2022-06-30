@@ -9,21 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../assets/img/favicon.ico">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="../assets/css/icofont.min.css">
-    <link rel="stylesheet" href="../assets/css/simple-line-icons.css">
-    <link rel="stylesheet" href="../assets/css/jquery.typeahead.css">
-    <link rel="stylesheet" href="../assets/css/datatables.min.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="../assets/css/Chart.min.css">
-    <link rel="stylesheet" href="../assets/css/morris.css">
-    <link rel="stylesheet" href="../assets/css/leaflet.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/icofont.min.css">
+    <link rel="stylesheet" href="/assets/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/assets/css/jquery.typeahead.css">
+    <link rel="stylesheet" href="/assets/css/datatables.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/assets/css/Chart.min.css">
+    <link rel="stylesheet" href="/assets/css/morris.css">
+    <link rel="stylesheet" href="/assets/css/leaflet.css">
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 
@@ -93,32 +93,32 @@
                             <li class="menu-item">
                                 <span class="group-title">Your Hospital</span>
                             </li>
+<!--                            <li  sec:authorize="hasAnyRole('ROLE_ADMIN')" class="menu-item">-->
+<!--                                <a class="item-link" th:href="@{/admin/dashboard}">-->
+<!--                                    <span class="link-icon icofont-thermometer-alt"></span>-->
+<!--                                    <span class="link-text">Dashboard</span>-->
+<!--                                </a>-->
+<!--                            </li>-->
                             <li class="menu-item">
-                                <a class="item-link" href="index.html">
-                                    <span class="link-icon icofont-thermometer-alt"></span>
-                                    <span class="link-text">Dashboard</span>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a class="item-link" href="appointments.html">
+                                <a class="item-link" href="icn-appointments.html">
                                     <span class="link-icon icofont-stethoscope-alt"></span>
                                     <span class="link-text">Appointments</span>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a class="item-link" href="doctors.html">
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN')" class="menu-item">
+                                <a class="item-link" th:href="@{/admin/doctors}">
                                     <span class="link-icon icofont-doctor"></span>
                                     <span class="link-text">Doctors</span>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a class="item-link" href="departments.html">
+                                <a class="item-link" href="icn-departments.html">
                                     <span class="link-icon icofont-nurse"></span>
                                     <span class="link-text">Departments</span>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a class="item-link" href="patients.html">
+                                <a class="item-link" href="icn-patients.html">
                                     <span class="link-icon icofont-paralysis-disability"></span>
                                     <span class="link-text">Patients</span>
                                 </a>
@@ -364,7 +364,7 @@
                                     <tbody>
                                     <tr>
 <!--                                        <td>-->
-<!--                                            <img src="../assets/content/user-40-1.jpg" alt="" width="40" height="40" class="rounded-500">-->
+<!--                                            <img src="/assets/content/user-40-1.jpg" alt="" width="40" height="40" class="rounded-500">-->
 <!--                                        </td>-->
                                         <td>
                                             <strong>Liam</strong>
@@ -402,7 +402,7 @@
                                     </tr>
                                     <tr>
 <!--                                        <td>-->
-<!--                                            <img src="../assets/content/user-40-2.jpg" alt="" width="40" height="40" class="rounded-500">-->
+<!--                                            <img src="/assets/content/user-40-2.jpg" alt="" width="40" height="40" class="rounded-500">-->
 <!--                                        </td>-->
                                         <td>
                                             <strong>Emma</strong>
@@ -440,7 +440,7 @@
                                     </tr>
                                     <tr>
 <!--                                        <td>-->
-<!--                                            <img src="../assets/content/user-40-3.jpg" alt="" width="40" height="40" class="rounded-500">-->
+<!--                                            <img src="/assets/content/user-40-3.jpg" alt="" width="40" height="40" class="rounded-500">-->
 <!--                                        </td>-->
                                         <td>
                                             <strong>Olivia</strong>
@@ -478,7 +478,7 @@
                                     </tr>
                                     <tr>
 <!--                                        <td>-->
-<!--                                            <img src="../assets/content/user-40-4.jpg" alt="" width="40" height="40" class="rounded-500">-->
+<!--                                            <img src="/assets/content/user-40-4.jpg" alt="" width="40" height="40" class="rounded-500">-->
 <!--                                        </td>-->
                                         <td>
                                             <strong>Ava</strong>
@@ -516,7 +516,7 @@
                                     </tr>
                                     <tr>
 <!--                                        <td>-->
-<!--                                            <img src="../assets/content/user-40-5.jpg" alt="" width="40" height="40" class="rounded-500">-->
+<!--                                            <img src="/assets/content/user-40-5.jpg" alt="" width="40" height="40" class="rounded-500">-->
 <!--                                        </td>-->
                                         <td>
                                             <strong>Noah</strong>
@@ -554,7 +554,7 @@
                                     </tr>
                                     <tr>
 <!--                                        <td>-->
-<!--                                            <img src="../assets/content/user-40-6.jpg" alt="" width="40" height="40" class="rounded-500">-->
+<!--                                            <img src="/assets/content/user-40-6.jpg" alt="" width="40" height="40" class="rounded-500">-->
 <!--                                        </td>-->
                                         <td>
                                             <strong>Isabella</strong>
@@ -592,7 +592,7 @@
                                     </tr>
                                     <tr>
 <!--                                        <td>-->
-<!--                                            <img src="../assets/content/user-40-7.jpg" alt="" width="40" height="40" class="rounded-500">-->
+<!--                                            <img src="/assets/content/user-40-7.jpg" alt="" width="40" height="40" class="rounded-500">-->
 <!--                                        </td>-->
                                         <td>
                                             <strong>Sophia</strong>
@@ -802,21 +802,21 @@
 <!-- end Add patients modals -->
 
 
-<script src="../assets/js/jquery-3.6.0.min.js"></script>
-<script src="../assets/js/jquery-migrate-1.4.1.min.js"></script>
-<script src="../assets/js/popper.min.js"></script>
-<script src="../assets/js/bootstrap.min.js"></script>
-<script src="../assets/js/jquery.typeahead.min.js"></script>
-<script src="../assets/js/datatables.min.js"></script>
-<script src="../assets/js/bootstrap-select.min.js"></script>
-<script src="../assets/js/jquery.barrating.min.js"></script>
-<script src="../assets/js/Chart.min.js"></script>
-<script src="../assets/js/raphael-min.js"></script>
-<script src="../assets/js/morris.min.js"></script>
-<script src="../assets/js/echarts.min.js"></script>
-<script src="../assets/js/echarts-gl.min.js"></script>
+<script src="/assets/js/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/jquery-migrate-1.4.1.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery.typeahead.min.js"></script>
+<script src="/assets/js/datatables.min.js"></script>
+<script src="/assets/js/bootstrap-select.min.js"></script>
+<script src="/assets/js/jquery.barrating.min.js"></script>
+<script src="/assets/js/Chart.min.js"></script>
+<script src="/assets/js/raphael-min.js"></script>
+<script src="/assets/js/morris.min.js"></script>
+<script src="/assets/js/echarts.min.js"></script>
+<script src="/assets/js/echarts-gl.min.js"></script>
 
-<script src="../assets/js/main.js"></script>
+<script src="/assets/js/main.js"></script>
 
 
 </body>

@@ -18,12 +18,11 @@ public class PatientService {
 
     @Autowired
     private InsuredPatient isInsuredPatient;
-//    InsuredPatient isInsuredPatient = new InsuredPatient();
+
 
     public void createPatient(SignUpPatientForm patientForm, Long userId) {
 
-        // TODO Call CNSAS - use RestTemplate
-       //TODO InsurredPatient insurredPatient = restTemplate.getForObject("http://cnass/12732131232", InsurredPatient.class);
+
         String insuredPatient = restTemplate.getForObject("http://localhost:8081/insurances/"+patientForm.getCnp(), String.class);
 
        byte insured = isInsuredPatient.insuredResponse(insuredPatient.toString());

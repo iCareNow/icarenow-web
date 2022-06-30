@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <title>iCare - We really do care</title>
@@ -57,16 +57,16 @@
                     <nav class="main-menu-wrap">
                         <ul class="menu-ul">
                             <li class="menu-item">
-                                <span class="group-title">Medicine</span>
+                                <span class="group-title">Your space</span>
                             </li>
-                            <li class="menu-item">
-                                <a class="item-link" href="index.html">
+                            <li  sec:authorize="hasAnyRole('ROLE_ADMIN')" class="menu-item">
+                                <a class="item-link" th:href="@{/admin/dashboard}">
                                     <span class="link-icon icofont-thermometer-alt"></span>
                                     <span class="link-text">Dashboard</span>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a class="item-link" href="appointments.html">
+                                <a class="item-link" href="icn-appointments.html">
                                     <span class="link-icon icofont-stethoscope-alt"></span>
                                     <span class="link-text">Appointments</span>
                                 </a>
@@ -78,7 +78,7 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a class="item-link" href="patients.html">
+                                <a class="item-link" href="icn-patients.html">
                                     <span class="link-icon icofont-paralysis-disability"></span>
                                     <span class="link-text">Patients</span>
                                 </a>
@@ -179,58 +179,39 @@
                                             </td>
 
 
-                                        </tr>
                                     </tbody>
-                                    <!--                                    <tbody>-->
-                                    <!--                                    <tr>-->
-                                    <!--                                        <td>-->
-                                    <!--                                            Liam-->
-                                    <!--                                        </td>-->
-                                    <!--                                        <td>-->
-                                    <!--                                            Benjamin-->
-                                    <!--                                        </td>-->
-                                    <!--                                        <td>-->
-                                    <!--                                            <div class="d-flex align-items-center nowrap text-primary">-->
-                                    <!--                                                <span class="icofont-ui-email p-0 me-2"></span>-->
-                                    <!--                                                liam@gmail.com-->
-                                    <!--                                            </div>-->
-                                    <!--                                        </td>-->
-                                    <!--                                        <td>Oftalmologist</td>-->
-                                    <!--                                        <td>-->
-                                    <!--                                            <div class="actions">-->
-                                    <!--                                                <button class="btn btn-info btn-sm btn-square rounded-pill">-->
-                                    <!--                                                    <span class="btn-icon icofont-ui-edit"></span>-->
-                                    <!--                                                </button>-->
-                                    <!--                                                <button class="btn btn-error btn-sm btn-square rounded-pill">-->
-                                    <!--                                                    <span class="btn-icon icofont-ui-delete"></span>-->
-                                    <!--                                                </button>-->
-                                    <!--                                            </div>-->
-                                    <!--                                        </td>-->
-                                    <!--                                    </tr>-->
+<!--                                    <tbody>-->
+<!--                                    <tr>-->
+<!--                                        <td>-->
+<!--                                            Liam-->
+<!--                                        </td>-->
+<!--                                        <td>-->
+<!--                                            Benjamin-->
+<!--                                        </td>-->
+<!--                                        <td>-->
+<!--                                            <div class="d-flex align-items-center nowrap text-primary">-->
+<!--                                                <span class="icofont-ui-email p-0 me-2"></span>-->
+<!--                                                liam@gmail.com-->
+<!--                                            </div>-->
+<!--                                        </td>-->
+<!--                                        <td>Oftalmologist</td>-->
+<!--                                        <td>-->
+<!--                                            <div class="actions">-->
+<!--                                                <button class="btn btn-info btn-sm btn-square rounded-pill">-->
+<!--                                                    <span class="btn-icon icofont-ui-edit"></span>-->
+<!--                                                </button>-->
+<!--                                                <button class="btn btn-error btn-sm btn-square rounded-pill">-->
+<!--                                                    <span class="btn-icon icofont-ui-delete"></span>-->
+<!--                                                </button>-->
+<!--                                            </div>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
 
-                                    <!--                                    </tbody>-->
+<!--                                    </tbody>-->
                                 </table>
                             </div>
 
-<!--                            <nav class="mt-4">-->
-<!--                                <ul class="pagination">-->
-<!--                                    <li class="page-item disabled">-->
-<!--                                        <a class="page-link" href="#" aria-label="Previous" tabindex="-1"-->
-<!--                                           aria-disabled="true">-->
-<!--                                            <span class="icofont-simple-left"></span>-->
-<!--                                        </a>-->
-<!--                                    </li>-->
-<!--                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a>-->
-<!--                                    </li>-->
-<!--                                    <li class="page-item"><a class="page-link" href="#">2</a></li>-->
-<!--                                    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-<!--                                    <li class="page-item">-->
-<!--                                        <a class="page-link" href="#" aria-label="Next">-->
-<!--                                            <span class="icofont-simple-right"></span>-->
-<!--                                        </a>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </nav>-->
+
                         </div>
                     </div>
 
@@ -249,90 +230,88 @@
     </div>
 </div>
 
-<!--&lt;!&ndash; Add doctor modals &ndash;&gt;-->
-<!--<div class="modal fade" id="add-doctor" tabindex="-1" aria-hidden="true" style="display: none;">-->
-<!--    <div class="modal-dialog modal-dialog-centered">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <h5 class="modal-title">Add doctor</h5>-->
-<!--            </div>-->
+<!-- Add doctor modals -->
+<div class="modal fade" id="add-doctor" tabindex="-1" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add doctor</h5>
+            </div>
 
-<!--            <div class="modal-body">-->
+            <div class="modal-body">
 
-<!--                <form id="doctorForm" th:action="@{/admin/doctors}" th:object="${doctorForm}" method="post"-->
-<!--                      class="user">-->
+                <form id="doctorForm" th:action="@{/admin/doctors}" th:object="${doctorForm}" method="post"
+                      class="user">
 
-<!--                    <div class="form-group">-->
-<!--                        <input type="text" th:field="*{firstName}" class="form-control form-control-user"-->
-<!--                               placeholder="First Name">-->
-<!--                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('firstName')}"-->
-<!--                             th:errors="*{firstName}"></div>-->
-<!--                    </div>-->
+                    <div class="form-group">
+                        <input type="text" th:field="*{firstName}" class="form-control form-control-user"
+                               placeholder="First Name">
+                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('firstName')}"
+                             th:errors="*{firstName}"></div>
+                    </div>
 
-<!--                    <div class="form-group">-->
-<!--                        <input type="text" th:field="*{lastName}" class="form-control form-control-user"-->
-<!--                               placeholder="Last Name">-->
-<!--                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('lastName')}"-->
-<!--                             th:errors="*{lastName}"></div>-->
-<!--                    </div>-->
+                    <div class="form-group">
+                        <input type="text" th:field="*{lastName}" class="form-control form-control-user"
+                               placeholder="Last Name">
+                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('lastName')}"
+                             th:errors="*{lastName}"></div>
+                    </div>
 
-<!--                    <div class="form-group">-->
-<!--                        <input type="text" th:field="*{email}" class="form-control form-control-user"-->
-<!--                               placeholder="Email">-->
-<!--                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('email')}"-->
-<!--                             th:errors="*{email}"></div>-->
-<!--                    </div>-->
+                    <div class="form-group">
+                        <input type="text" th:field="*{email}" class="form-control form-control-user"
+                               placeholder="Email">
+                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('email')}"
+                             th:errors="*{email}"></div>
+                    </div>
 
-<!--                    <div class="form-group">-->
-<!--                        <input type="password" th:field="*{password}" class="form-control form-control-user"-->
-<!--                               placeholder="Password">-->
-<!--                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('password')}"-->
-<!--                             th:errors="*{password}"></div>-->
-<!--                    </div>-->
+                    <div class="form-group">
+                        <input type="password" th:field="*{password}" class="form-control form-control-user"
+                               placeholder="Password">
+                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('password')}"
+                             th:errors="*{password}"></div>
+                    </div>
 
-<!--                    <div class="row">-->
+                    <div class="row">
 
-<!--                        <div class="col-12 col-sm-6">-->
-<!--                            <div class="form-group">-->
-<!--                                <div class="dropdown bootstrap-select"><select class="selectpicker"-->
-<!--                                                                               title="Specialty">-->
+                        <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <div class="dropdown bootstrap-select"><select class="selectpicker"
+                                                                               title="Specialty">
 
-<!--                                    <option class="d-none">Specialty</option>-->
-<!--                                    <option>Cardiology</option>-->
-<!--                                    <option>Dentistry</option>-->
-<!--                                    <option>Laboratory</option>-->
-<!--                                    <option>Pulmonology</option>-->
-<!--                                    <option>Cardiology</option>-->
-<!--                                    <option>Gynecology</option>-->
-<!--                                    <option>Gastrology</option>-->
-<!--                                    <option>Neurology</option>-->
-<!--                                    <option>Physical rehabilitation</option>-->
-<!--                                    <option>Pediatrician</option>-->
+                                    <option class="d-none">Specialty</option>
+                                    <option>Cardiology</option>
+                                    <option>Dentistry</option>
+                                    <option>Laboratory</option>
+                                    <option>Pulmonology</option>
+                                    <option>Gynecology</option>
+                                    <option>Gastrology</option>
+                                    <option>Neurology</option>
+                                    <option>Physical rehabilitation</option>
 
-<!--                                </select>-->
+                                </select>
 
-<!--                                    <div class="dropdown-menu ">-->
-<!--                                        <div class="inner show" role="listbox" id="bs-select-3"-->
-<!--                                             tabindex="-1">-->
-<!--                                            <ul class="dropdown-menu inner show" role="presentation"></ul>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                                    <div class="dropdown-menu ">
+                                        <div class="inner show" role="listbox" id="bs-select-3"
+                                             tabindex="-1">
+                                            <ul class="dropdown-menu inner show" role="presentation"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-<!--                </form>-->
-<!--            </div>-->
-<!--            <div class="modal-footer d-block">-->
-<!--                <div class="actions justify-content-between">-->
-<!--                    <button type="button" class="btn btn-error" data-bs-dismiss="modal">Cancel</button>-->
-<!--                    <button form="doctorForm" type="submit" class="btn btn-primary">Add doctor</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+                </form>
+            </div>
+            <div class="modal-footer d-block">
+                <div class="actions justify-content-between">
+                    <button type="button" class="btn btn-error" data-bs-dismiss="modal">Cancel</button>
+                    <button form="doctorForm" type="submit" class="btn btn-primary">Add doctor</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- end Add doctor modals -->
 
 <script src="/assets/js/jquery-3.6.0.min.js"></script>

@@ -2,6 +2,7 @@ package us.icarenow.web.model.entity;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "icn_doctor")
@@ -16,6 +17,11 @@ public class Doctor {
     private String firstName;
 
     private String lastName;
+
+//    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    @JoinTable(joinColumns = @JoinColumn(name = "doctorId", referencedColumnName = "id"),
+//            inverseJoinColumns = @JoinColumn(name = "specialtyId", referencedColumnName = "id"))
+//    private List<Specialty> specialties;
 
     public Doctor() {
     }
@@ -58,4 +64,11 @@ public class Doctor {
         this.lastName = lastName;
     }
 
+//    public List<Specialty> getSpecialties() {
+//        return specialties;
+//    }
+//
+//    public void setSpecialties(List<Specialty> specialties) {
+//        this.specialties = specialties;
+//    }
 }
