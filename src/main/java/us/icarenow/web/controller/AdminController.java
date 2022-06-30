@@ -106,4 +106,5 @@ public class AdminController {
         doctorListMV.addObject("doctorList", doctorUserDTOS);
         return doctorListMV;
     }
+    //TODO delete doctors
 }
