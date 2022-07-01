@@ -20,7 +20,7 @@ public class Doctor {
 
 //    private String mergedSpecialties;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(joinColumns = @JoinColumn(name = "doctorId", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "specialtyId", referencedColumnName = "id"))
     private List<Specialty> specialty;

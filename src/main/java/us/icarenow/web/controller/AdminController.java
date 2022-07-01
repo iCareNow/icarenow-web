@@ -118,7 +118,7 @@ public class AdminController {
     @RequestMapping(value = "/doctors/{id}", method={RequestMethod.DELETE, RequestMethod.GET})
     public String deleteCustomer(@PathVariable("id") long id) {
         doctorService.deleteDoctor(id);
-        return "icn-doctors";
+        return "redirect:/admin/doctors";
     }
 
 

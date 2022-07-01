@@ -1,22 +1,17 @@
 package us.icarenow.web.service;
 
-import com.sun.xml.bind.v2.TODO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import us.icarenow.web.controller.form.DoctorForm;
-import us.icarenow.web.model.entity.*;
+import us.icarenow.web.model.entity.Doctor;
+import us.icarenow.web.model.entity.Specialty;
 import us.icarenow.web.repository.DoctorRepository;
 import us.icarenow.web.repository.SpecialtyRepository;
 
-import javax.print.Doc;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
-
-import static sun.jvm.hotspot.runtime.BasicObjectLock.size;
 
 
 @Service

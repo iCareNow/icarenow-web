@@ -30,4 +30,4 @@ INSERT INTO icn_specialty(name) VALUES ('Gastrology');
 INSERT INTO icn_specialty(name) VALUES ('Neurology');
 INSERT INTO icn_specialty(name) VALUES ('Physical rehabilitation');
 INSERT INTO icn_doctor_specialty(doctor_id, specialty_id) VALUES (1, 1), (2, 3);
-INSERT INTO icn_appointment(patient_id, doctor_id, details) VALUES(1, 1, 'detalii apointment1'), (2, 1, 'detalii apointment2');
+--INSERT INTO icn_appointment(patient_id, doctor_id, details) VALUES(1, 1, 'detalii apointment1'), (2, 1, 'detalii apointment2');
