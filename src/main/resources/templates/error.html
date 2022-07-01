@@ -1,15 +1,15 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
-    <title>iCare - We really do care</title>
-    <meta name="keywords" content="iCare">
+    <title>iCareNow - We really do care!</title>
+    <meta name="keywords" content="MedicApp">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
 
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.css">
@@ -37,47 +37,29 @@
 <!-- .main-loader -->
 
 <div class="page-box">
-    <div class="app-container page-icn-login">
+    <div class="app-container page-404">
         <div class="content-box">
             <div class="content-header">
                 <div class="app-logo">
                     <div class="logo-wrap">
-                        <img src="/assets/img/logo.png" alt="" width="147" height="33" class="logo-img">
+                        <img src="/assets/img/logo.svg" alt="" width="147" height="33" class="logo-img">
                     </div>
                 </div>
             </div>
 
             <div class="content-body">
-                <div class="w-100">
-                    <h2 class="h4 mt-0 mb-1">Sign in</h2>
-                    <p class="text-muted">Sign in to access your Account</p>
+                <div class="w-100 text-center">
+                    <div class="display-1 d-flex mb-5 justify-content-center align-items-center">
+                        <div class="icon me-2 icofont-radio-active"></div>
 
-                    <form th:action="@{/login}" method="post" class="user">
-                        <div class="invalid-feedback" style="display:inline" th:if="${param.error}">
-                            Invalid username and password.
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" name="username" type="email" placeholder="Login">
-                        </div>
+                        <div class="font-weight-normal text-muted mt-0 mb-0">404</div>
+                    </div>
 
-                        <div class="form-group">
-                            <input class="form-control" name="password" type="password" placeholder="Password">
-                        </div>
+                    <h1 class="fs-20 mb-5">Oopps. The page you were looking for doesn't exist.</h1>
 
-                        <div class="form-check form-switch mb-4">
-                            <input type="checkbox" class="form-check-input" id="remember-me" checked>
-                            <label class="form-check-label" for="remember-me">Remember me</label>
-                        </div>
-
-                        <div class="actions justify-content-between">
-                            <button class="btn btn-primary">
-                                <span class="btn-icon icofont-login me-2"></span>Sign in
-                            </button>
-                        </div>
-                    </form>
-
-                    <p class="mt-5 mb-1"><a href="#">Forgot password?</a></p>
-                    <p>Don't have an account? <a th:href="@{/signup}">Sign up!</a></p>
+                    <!--                    <a class="btn btn-primary" th:href="@{/}">-->
+                    <!--                        <span class="btn-icon icofont-home me-2"></span>Back to home-->
+                    <!--                    </a>-->
                 </div>
             </div>
         </div>

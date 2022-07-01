@@ -61,8 +61,8 @@ CREATE TABLE icn_doctor_specialty (
 	doctor_id integer not null,
 	specialty_id integer not null,
 	PRIMARY KEY (doctor_id, specialty_id),
-	FOREIGN KEY (specialty_id) REFERENCES icn_specialty(id),
-	FOREIGN KEY (doctor_id) REFERENCES icn_doctor(id)
+	FOREIGN KEY (doctor_id) REFERENCES icn_doctor(id),
+	FOREIGN KEY (specialty_id) REFERENCES icn_specialty(id)
 );
 
 DROP TABLE IF EXISTS icn_appointment;

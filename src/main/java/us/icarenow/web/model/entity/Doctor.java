@@ -2,37 +2,40 @@ package us.icarenow.web.model.entity;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name="icn_patient")
-public class Patient {
+@Table(name = "icn_doctor")
+public class Doctor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     private long userId;
-
-    private String cnp;
 
     private String firstName;
 
     private String lastName;
 
-    private byte insured;
+//    private String mergedSpecialties;
 
-    public Patient() {
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(joinColumns = @JoinColumn(name = "doctorId", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "specialtyId", referencedColumnName = "id"))
+    private List<Specialty> specialty;
+
+    public Doctor() {
     }
 
-    public Patient(Long userId, String cnp, String firstName, String lastName, byte insured) {
+    public Doctor(long userId, String firstName, String lastName) {
         this.userId = userId;
-        this.cnp = cnp;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.insured = insured;
+//        this.specialty=getSpecialty();
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -46,14 +49,6 @@ public class Patient {
 
     public void setUserId(int userId) {
         this.userId = userId;
-    }
-
-    public String getCnp() {
-        return cnp;
-    }
-
-    public void setCnp(String cnp) {
-        this.cnp = cnp;
     }
 
     public String getFirstName() {
@@ -72,11 +67,18 @@ public class Patient {
         this.lastName = lastName;
     }
 
-    public byte getInsured() {
-        return insured;
+    public List<Specialty> getSpecialty() {
+        return specialty;
     }
 
-    public void setInsured(byte insured) {
-        this.insured = insured;
+    public void setSpecialty(List<Specialty> specialty) {
+        this.specialty = specialty;
     }
-}
+    @Override
+    public String toString() {
+        return "Doctor{" +
+                "specialty=" + specialty +
+                '}';
+    }
+
+   }

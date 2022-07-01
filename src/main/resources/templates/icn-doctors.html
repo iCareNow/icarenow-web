@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>iCare - We really do care</title>
+    <meta name="keywords" content="MedicApp">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/icofont.min.css">
+    <link rel="stylesheet" href="/assets/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/assets/css/jquery.typeahead.css">
+    <link rel="stylesheet" href="/assets/css/datatables.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/assets/css/Chart.min.css">
+    <link rel="stylesheet" href="/assets/css/morris.css">
+    <link rel="stylesheet" href="/assets/css/leaflet.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/icarenow.css">
+</head>
+
+<body class="vertical-layout boxed loaded" style="">
+<div class="app-loader main-loader">
+    <div class="loader-box">
+        <div class="bounceball"></div>
+        <div class="text">Medic<span>app</span></div>
+    </div>
+</div>
+<!-- .main-loader -->
+
+<div class="page-box">
+    <div class="app-container">
+
+        <!-- Vertical navbar -->
+        <div id="navbar2" class="app-navbar vertical">
+            <div class="navbar-wrap">
+
+                <button class="no-style navbar-toggle navbar-close icofont-close-line d-lg-none"></button>
+
+                <div class="app-logo">
+                    <div class="logo-wrap">
+                        <!-- Image logo -->
+                        <img src="/assets/img/logo.png" alt="" width="147" height="33" class="logo-img">
+                        <!-- end Image logo -->
+                    </div>
+                </div>
+
+                <div class="main-menu">
+                    <nav class="main-menu-wrap">
+                        <ul class="menu-ul">
+                            <li class="menu-item">
+                                <span class="group-title">Your space</span>
+                            </li>
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN')" class="menu-item">
+                                <a class="item-link" th:href="@{/admin/dashboard}">
+                                    <span class="link-icon icofont-thermometer-alt"></span>
+                                    <span class="link-text">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="item-link" href="icn-appointments.html">
+                                    <span class="link-icon icofont-stethoscope-alt"></span>
+                                    <span class="link-text">Appointments</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="item-link" href="departments.html">
+                                    <span class="link-icon icofont-nurse"></span>
+                                    <span class="link-text">Departments</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="item-link" href="icn-patients.html">
+                                    <span class="link-icon icofont-paralysis-disability"></span>
+                                    <span class="link-text">Patients</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="navbar-skeleton vertical">
+                    <div class="top-part">
+                        <div class="sk-logo bg animated-bg"></div>
+                        <div class="sk-menu">
+                            <span class="sk-menu-item menu-header bg-1 animated-bg"></span>
+                            <span class="sk-menu-item bg animated-bg w-75"></span>
+                            <span class="sk-menu-item bg animated-bg w-80"></span>
+                            <span class="sk-menu-item bg animated-bg w-50"></span>
+                            <span class="sk-menu-item bg animated-bg w-75"></span>
+                            <span class="sk-menu-item bg animated-bg w-50"></span>
+                            <span class="sk-menu-item bg animated-bg w-60"></span>
+                        </div>
+                        <div class="sk-menu">
+                            <span class="sk-menu-item menu-header bg-1 animated-bg"></span>
+                            <span class="sk-menu-item bg animated-bg w-60"></span>
+                            <span class="sk-menu-item bg animated-bg w-40"></span>
+                            <span class="sk-menu-item bg animated-bg w-60"></span>
+                            <span class="sk-menu-item bg animated-bg w-40"></span>
+                            <span class="sk-menu-item bg animated-bg w-40"></span>
+                            <span class="sk-menu-item bg animated-bg w-40"></span>
+                            <span class="sk-menu-item bg animated-bg w-40"></span>
+                        </div>
+                        <div class="sk-menu">
+                            <span class="sk-menu-item menu-header bg-1 animated-bg"></span>
+                            <span class="sk-menu-item bg animated-bg w-60"></span>
+                            <span class="sk-menu-item bg animated-bg w-50"></span>
+                        </div>
+                        <div class="sk-button animated-bg w-90"></div>
+                    </div>
+
+                    <div class="bottom-part">
+                        <div class="sk-menu">
+                            <span class="sk-menu-item bg-1 animated-bg w-60"></span>
+                            <span class="sk-menu-item bg-1 animated-bg w-80"></span>
+                        </div>
+                    </div>
+
+                    <div class="horizontal-menu">
+                        <span class="sk-menu-item bg animated-bg"></span>
+                        <span class="sk-menu-item bg animated-bg"></span>
+                        <span class="sk-menu-item bg animated-bg"></span>
+                        <span class="sk-menu-item bg animated-bg"></span>
+                        <span class="sk-menu-item bg animated-bg"></span>
+                        <span class="sk-menu-item bg animated-bg"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- end Vertical navbar -->
+
+        <main class="main-content">
+            <div class="app-loader"><i class="icofont-spinner-alt-4 rotate"></i></div>
+
+            <div class="main-content-wrap">
+                <header class="page-header">
+                    <h1 class="page-title">Doctors</h1>
+                </header>
+
+                <div class="page-content">
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Specialty</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="doctor: ${doctorList}">
+                                        <td th:text="${doctor.firstName}">First Name</td>
+                                        <td th:text="${doctor.lastName}">Last Name</td>
+                                        <td th:text="${doctor.email}">Email</td>
+                                        <td th:text="${doctor.mergedSpecialties}">Specialty</td>
+                                        <td>
+                                            <div class="actions">
+                                                <button class="btn btn-info btn-sm btn-square rounded-pill">
+                                                    <span class="btn-icon icofont-ui-edit"></span>
+                                                </button>
+                                                <form th:action="@{/admin/doctors/}+${doctor.id}" method="delete">
+                                                    <button class="btn btn-error btn-sm btn-square rounded-pill">
+                                                        <span class="btn-icon icofont-ui-delete"></span>
+                                                    </button>
+                                                </form>
+
+                                            </div>
+                                        </td>
+
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="add-action-box">
+                        <button class="btn btn-dark btn-lg btn-square rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#add-doctor">
+                            <span class="btn-icon icofont-contact-add"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="content-overlay"></div>
+
+    </div>
+</div>
+
+<!-- Add doctor modals -->
+<div class="modal fade" id="add-doctor" tabindex="-1" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add doctor</h5>
+            </div>
+
+            <div class="modal-body">
+
+                <form id="doctorForm" th:action="@{/admin/doctors}" th:object="${doctorForm}" method="post"
+                      class="user">
+
+                    <div class="form-group">
+                        <input type="text" th:field="*{firstName}" class="form-control form-control-user"
+                               placeholder="First Name">
+                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('firstName')}"
+                             th:errors="*{firstName}"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" th:field="*{lastName}" class="form-control form-control-user"
+                               placeholder="Last Name">
+                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('lastName')}"
+                             th:errors="*{lastName}"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" th:field="*{email}" class="form-control form-control-user"
+                               placeholder="Email">
+                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('email')}"
+                             th:errors="*{email}"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" th:field="*{password}" class="form-control form-control-user"
+                               placeholder="Password">
+                        <div class="invalid-feedback" style="display:inline" th:if="${#fields.hasErrors('password')}"
+                             th:errors="*{password}"></div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <div class="dropdown bootstrap-select"><select th:field="*{specialty}"
+                                                                               class="selectpicker"
+                                                                               title="Specialty">
+
+                                    <!--                                    <option class="d-none">Specialty</option>-->
+                                    <option th:value="'Cardiology'" th:text="Cardiology"></option>
+                                    <option th:value="'Dentistry'" th:text="Dentistry"></option>
+                                    <option th:value="'Laboratory'" th:text="Laboratory"></option>
+                                    <option th:value="'Pulmonology'" th:text="Pulmonology"></option>
+                                    <option th:value="'Gynecology'" th:text="Gynecology"></option>
+                                    <option th:value="'Gastrology'" th:text="Gastrology"></option>
+                                    <option th:value="'Neurology'" th:text="Neurology"></option>
+                                    <option th:value="'Physical-rehabilitation'"
+                                            th:text="Physical-rehabilitation"></option>
+
+                                </select>
+
+                                    <div class="dropdown-menu ">
+                                        <div class="inner show" role="listbox" id="bs-select-3"
+                                             tabindex="-1">
+                                            <ul class="dropdown-menu inner show" role="presentation"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer d-block">
+                <div class="actions justify-content-between">
+                    <button type="button" class="btn btn-error" data-bs-dismiss="modal">Cancel</button>
+                    <button form="doctorForm" type="submit" class="btn btn-primary">Add doctor</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end Add doctor modals -->
+
+<script src="/assets/js/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/jquery-migrate-1.4.1.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery.typeahead.min.js"></script>
+<script src="/assets/js/datatables.min.js"></script>
+<script src="/assets/js/bootstrap-select.min.js"></script>
+<script src="/assets/js/jquery.barrating.min.js"></script>
+<script src="/assets/js/Chart.min.js"></script>
+<script src="/assets/js/raphael-min.js"></script>
+<script src="/assets/js/morris.min.js"></script>
+<script src="/assets/js/echarts.min.js"></script>
+<script src="/assets/js/echarts-gl.min.js"></script>
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+<script>
+
+
+</script>
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>
