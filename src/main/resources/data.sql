@@ -1,7 +1,7 @@
 INSERT INTO icn_role(name) VALUES ('ADMIN');
 INSERT INTO icn_role(name)  VALUES ('DOCTOR');
 INSERT INTO icn_role(name)  VALUES ('PATIENT');
-INSERT INTO icn_user(email, pwd, account_status) VALUES ('andrei.mladin@gmail.com', '$2a$10$sbtCxo3sMIlrhz.htDiVxOJnJfo7zVVVdce8lzauh7FJqhiacBKs2', 1);
+INSERT INTO icn_user(email, pwd, account_status) VALUES ('admin@gmail.com', '$2a$10$sbtCxo3sMIlrhz.htDiVxOJnJfo7zVVVdce8lzauh7FJqhiacBKs2', 1);
 INSERT INTO icn_user(email, pwd, account_status) VALUES ('radumbaciu@gmail.com', '$2a$10$EyMtttMDFcSNFwNTrQv.fOOwQ1rs8j0IgAef2aEtKcr.73i1YFtBm', 1);
 INSERT INTO icn_user(email, pwd, account_status) VALUES ('libenciuc.adrian@yahoo.com', '$2a$10$sbtCxo3sMIlrhz.htDiVxOJnJfo7zVVVdce8lzauh7FJqhiacBKs2', 1);
 INSERT INTO icn_user(email, pwd, account_status) VALUES ('florentina.mirisan@yahoo.ro', '$2a$10$sbtCxo3sMIlrhz.htDiVxOJnJfo7zVVVdce8lzauh7FJqhiacBKs2', 1);

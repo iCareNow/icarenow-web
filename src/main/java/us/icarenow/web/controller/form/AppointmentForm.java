@@ -5,8 +5,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Arrays;
+import java.util.List;
 
 public class AppointmentForm {
+
+//    private long doctorId;
 
     @Size(min=3, max=40)
     private String fullName;
@@ -32,6 +36,8 @@ public class AppointmentForm {
 
     @Size(min=3, max=25)
     private String injury;
+
+//    private List<String> doctors = Arrays.asList("Doctor1", "Doctor2");
 
     public String getFullName() {
         return fullName;
@@ -89,4 +95,19 @@ public class AppointmentForm {
         this.injury = injury;
     }
 
+//    public List<String> getDoctors() {
+//        return doctors;
+//    }
+//
+//    public void setDoctors(List<String> doctors) {
+//        this.doctors = doctors;
+//    }
+//
+//    public long getDoctorId() {
+//        return doctorId;
+//    }
+//
+//    public void setDoctorId(long doctorId) {
+//        this.doctorId = doctorId;
+//    }
 }
