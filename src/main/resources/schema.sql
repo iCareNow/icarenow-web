@@ -68,9 +68,15 @@ CREATE TABLE icn_doctor_specialty (
 DROP TABLE IF EXISTS icn_appointment;
 CREATE TABLE icn_appointment (
 	id integer NOT NULL auto_increment,
-	patient_id integer not null,
-	doctor_id integer not null,
-	details varchar(200) not null,
+	patient_id integer,
+	doctor_id integer,
+	full_name varchar(40) not null,
+	email varchar(30) not null,
+	appoint_date date not null,
+	start_time time not null,
+	end_time time not null,
+	tel_number varchar(10) not null,
+	injury varchar(25) not null,
 	PRIMARY KEY (id),
 	FOREIGN KEY (patient_id) REFERENCES icn_patient(id),
 	FOREIGN KEY (doctor_id) REFERENCES icn_doctor(id)

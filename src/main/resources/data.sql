@@ -20,4 +20,4 @@ INSERT INTO icn_specialty(name) VALUES ('Family medicine');
 INSERT INTO icn_specialty(name) VALUES ('Internal medicine');
 INSERT INTO icn_specialty(name) VALUES ('Medical genetics');
 INSERT INTO icn_doctor_specialty VALUES (1, 1), (1, 2), (1, 3), (1, 4);
-INSERT INTO icn_appointment(patient_id, doctor_id, details) VALUES(1, 1, 'detalii apointment1'), (2, 1, 'detalii apointment2');
+--INSERT INTO icn_appointment(patient_id, doctor_id, details) VALUES(1, 1, 'detalii apointment1'), (2, 1, 'detalii apointment2');
