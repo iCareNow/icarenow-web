@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/assets/css/leaflet.css">
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="/assets/css/style2.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 
@@ -40,7 +40,7 @@
 </div>
 <!-- add full image -->
 <div class="page-box">
-    <div class="app-container page-sign-up">
+    <div class="app-container page-index">
         <div class="content-box">
             <div class="content-header">
                 <div class="app-logo">
@@ -102,12 +102,14 @@
 
                 <div class="main-menu">
                     <nav class="main-menu-wrap">
-                        <ul sec:authorize="isAuthenticated()" class="menu-ul">
+
+                        <ul class="menu-ul">
                             <li class="menu-item">
-                                <span sec:authentication="principal.username" class="group-title">Pages</span>
+
+                                <span class="group-title">Pages</span>
                             </li>
-                            <li class="menu-item">
-                                <a class="item-link" href="index.html">
+                            <li  sec:authorize="hasAnyRole('ROLE_ADMIN')" class="menu-item">
+                                <a class="item-link" th:href="@{/admin/dashboard}">
                                     <span class="link-icon icofont-thermometer-alt"></span>
                                     <span class="link-text">Dashboard</span>
                                 </a>
@@ -118,7 +120,26 @@
                                     <span class="link-text">Appointments</span>
                                 </a>
                             </li>
-                            <li class="menu-item">
+                            <li sec:authorize="hasAnyRole('ROLE_DOCTOR')"class="menu-item">
+                                <a class="item-link" href="appointments-doctor.html">
+                                    <span class="link-icon icofont-stethoscope-alt"></span>
+                                    <span class="link-text">Appointments</span>
+                                </a>
+                            </li>
+                            <li sec:authorize="hasAnyRole('ROLE_PATIENT')"class="menu-item">
+                                <a class="item-link" th:href="@{/doctors}">
+                                    <span class="link-icon icofont-stethoscope-alt"></span>
+                                    <span class="link-text">Doctors</span>
+                                </a>
+                            </li>
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN')" class="menu-item">
+                                <a class="item-link" th:href="@{/admin/doctors}">
+                                <span class="link-icon icofont-doctor"></span>
+                                    <span class="link-text">Doctors</span>
+                                </a>
+                            </li>
+
+                            <li  sec:authorize="isAnonymous()" class="menu-item">
                                 <a class="item-link" href="doctors.html">
                                     <span class="link-icon icofont-doctor"></span>
                                     <span class="link-text">Doctors</span>
@@ -130,24 +151,32 @@
                                     <span class="link-text">Departments</span>
                                 </a>
                             </li>
-                            <li class="menu-item">
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN')" class="menu-item">
                                 <a class="item-link" href="patients.html">
                                     <span class="link-icon icofont-paralysis-disability"></span>
                                     <span class="link-text">Patients</span>
                                 </a>
                             </li>
-                            <li class="menu-item">
+                            <li sec:authorize="hasAnyRole('ROLE_DOCTOR')" class="menu-item">
+                                <a class="item-link" href="patients.html">
+                                    <span class="link-icon icofont-paralysis-disability"></span>
+                                    <span class="link-text">Patients</span>
+                                </a>
+                            </li>
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN')" class="menu-item">
                                 <a class="item-link" href="payments.html">
                                     <span class="link-icon icofont-pay"></span>
                                     <span class="link-text">Payments</span>
                                 </a>
                             </li>
-                            <li class="menu-item">
+
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_DOCTOR','ROLE_PATIENT')" class="menu-item">
                                 <a class="item-link" th:href="@{/logout}">
-                                     <span class="link-icon icofont-logout"></span>
+                                    <span class="link-icon icofont-logout"></span>
                                     <span class="link-text">Logout</span>
                                 </a>
                             </li>
+
                         </ul>
 
                         <ul sec:authorize="isAnonymous()" class="menu-ul">
@@ -166,15 +195,6 @@
                         </ul>
 
                     </nav>
-                </div>
-
-                <div class="assistant-menu">
-                    <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#settings">
-                        <span class="link-icon icofont-ui-settings"></span>Settings
-                    </a>
-                    <a class="link" href="#">
-                        <span class="link-icon icofont-question-square"></span>FAQ &amp; Support
-                    </a>
                 </div>
 
                 <div class="navbar-skeleton vertical">

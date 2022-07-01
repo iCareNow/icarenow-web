@@ -2,5 +2,9 @@ server:
   port: 8083
   servlet:
     context-path: /
+  error:
+    whitelabel:
+      enabled: false
+    path: /error
 
 spring.main.allow-circular-references: true
