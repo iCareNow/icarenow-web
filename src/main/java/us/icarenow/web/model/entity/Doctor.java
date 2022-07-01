@@ -10,7 +10,7 @@ public class Doctor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     private long userId;
 
@@ -35,7 +35,7 @@ public class Doctor {
 //        this.specialty=getSpecialty();
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
