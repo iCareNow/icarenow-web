@@ -2,6 +2,8 @@ package us.icarenow.web.model.dto;
 
 public class DoctorUserDTO {
 
+    private Long id;
+
     private String firstName;
 
     private String lastName;
@@ -44,4 +46,13 @@ public class DoctorUserDTO {
     public void setMergedSpecialties(String mergedSpecialties) {
         this.mergedSpecialties = mergedSpecialties;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
+

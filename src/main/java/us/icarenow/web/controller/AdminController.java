@@ -60,6 +60,7 @@ public class AdminController {
         List<DoctorUserDTO> doctorUserDTOS = new ArrayList<>();
         doctors.forEach(doctor -> {
             DoctorUserDTO doctorUserDTO = new DoctorUserDTO();
+            doctorUserDTO.setId(doctor.getId());
             doctorUserDTO.setFirstName(doctor.getFirstName());
             doctorUserDTO.setLastName(doctor.getLastName());
             StringBuilder builder = new StringBuilder();
@@ -90,6 +91,7 @@ public class AdminController {
         List<DoctorUserDTO> doctorUserDTOS = new ArrayList<>();
         doctors.forEach(doctor -> {
             DoctorUserDTO doctorUserDTO = new DoctorUserDTO();
+            doctorUserDTO.setId(doctor.getId());
             doctorUserDTO.setFirstName(doctor.getFirstName());
             doctorUserDTO.setLastName(doctor.getLastName());
             StringBuilder builder = new StringBuilder();
@@ -114,8 +116,9 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/doctors/{id}", method={RequestMethod.DELETE, RequestMethod.GET})
-    public void deleteCustomer(@PathVariable("id") long id) {
+    public String deleteCustomer(@PathVariable("id") long id) {
         doctorService.deleteDoctor(id);
+        return "icn-doctors";
     }
 
 
